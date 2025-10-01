@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Positioning - z-index & Stacking Context</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .container {
+      position: relative; /* Creates a stacking context for children */
+      width: 400px;
+      height: 250px;
+      border: 2px solid #333;
+      margin: auto;
+      background: #f9f9f9;
+    }
+
+    /* Base boxes */
+    .box {
+      position: absolute;
+      width: 150px;
+      height: 100px;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    /* Different boxes with z-index */
+    .red {
+      background: crimson;
+      top: 40px;
+      left: 40px;
+      z-index: 1; /* Behind green */
+    }
+
+    .green {
+      background: seagreen;
+      top: 70px;
+      left: 80px;
+      z-index: 2; /* Above red */
+    }
+
+    .blue {
+      background: royalblue;
+      top: 100px;
+      left: 120px;
+      z-index: 3; /* Above all */
+    }
+
+    /* Stacking context demo */
+    .parent {
+      position: relative;
+      width: 300px;
+      height: 150px;
+      background: #eee;
+      margin: 20px auto;
+      border: 2px dashed #666;
+      z-index: 0;
+    }
+
+    .child1 {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: orange;
+      width: 120px;
+      height: 100px;
+      z-index: 10; /* High, but only inside parent */
+    }
+
+    .child2 {
+      position: absolute;
+      top: 40px;
+      left: 60px;
+      background: purple;
+      width: 120px;
+      height: 100px;
+      z-index: 5; /* Lower, so overlaps differently */
+    }
+
+    .outside {
+      position: relative;
+      top: -120px;
+      left: 100px;
+      width: 150px;
+      height: 100px;
+      background: teal;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999; /* Stacks above entire parent box */
+    }
+  </style>
+</head>
+<body>
+  <h1>🎯 Advanced Positioning: z-index & Stacking Context</h1>
+
+  <!-- z-index demo -->
+  <div class="container">
+    <div class="box red">z-index: 1</div>
+    <div class="box green">z-index: 2</div>
+    <div class="box blue">z-index: 3</div>
+  </div>
+
+  <h2 style="text-align:center; margin-top:40px;">Stacking Context Demo</h2>
+  <div class="parent">
+    <div class="child1">Child z-index:10</div>
+    <div class="child2">Child z-index:5</div>
+  </div>
+  <div class="outside">Outside Box</div>
+
+  <p style="margin-top:50px;">
+    ✅ <b>Explanation:</b>  
+    - <code>z-index</code> controls which element appears on top.  
+    - Higher <code>z-index</code> = on top (only within same stacking context).  
+    - New stacking contexts are created by elements with <code>position</code> (relative, absolute, fixed, sticky) and special properties (opacity &lt; 1, transform, filter, etc).  
+    - The "Outside Box" with <code>z-index: 999</code> overlaps everything, even though inside <code>.parent</code> children have z-index values.
+  </p>
+</body>
+</html>

@@ -1,0 +1,234 @@
+🛣️ JavaScript Roadmap (Basic → Advanced)
+1. Basics (Foundation Stage)
+
+👉 Goal: Understand the fundamentals of JS syntax and how it runs in browsers.
+
+Introduction to JavaScript
+
+What is JavaScript? (History, use cases, features)
+
+How JS runs (Browser, Node.js)
+
+Setup (VS Code, Browser Console)
+
+Core Syntax
+
+Variables (var, let, const)
+
+Data Types (string, number, boolean, null, undefined, symbol, bigint)
+
+Operators (arithmetic, comparison, logical, assignment, ternary)
+
+Control Flow
+
+if, else, else if
+
+switch statements
+
+Loops (for, while, do-while, for…in, for…of)
+
+Functions
+
+Function declaration & expression
+
+Parameters & return values
+
+Arrow functions
+
+Default & rest parameters
+
+Basic Practice
+
+Calculator program
+
+Even/Odd checker
+
+Factorial program
+
+Palindrome checker
+
+2. Intermediate (Core JavaScript)
+
+👉 Goal: Start building logic, work with collections, and understand DOM.
+
+Arrays
+
+Creating arrays
+
+Methods: push(), pop(), shift(), unshift(), map(), filter(), reduce(), find(), sort()
+
+Strings
+
+String methods (slice, substring, replace, split, trim)
+
+Template literals
+
+Objects
+
+Creating & accessing properties
+
+this keyword
+
+Object methods (Object.keys, Object.values, Object.entries)
+
+JSON basics
+
+ES6 Features
+
+Template literals
+
+Destructuring
+
+Spread & Rest operators
+
+let vs const vs var
+
+Default parameters
+
+DOM Manipulation
+
+document.querySelector, getElementById, getElementsByClassName
+
+Changing text, HTML, CSS with JS
+
+Event handling (onclick, addEventListener)
+
+Creating & removing elements dynamically
+
+Practice
+
+To-do list app
+
+Image slider
+
+Digital clock
+
+3. Advanced JavaScript
+
+👉 Goal: Master inner workings of JS and advanced features.
+
+Asynchronous JavaScript
+
+Callbacks
+
+Promises (.then, .catch)
+
+async/await
+
+fetch API (AJAX)
+
+Error Handling
+
+try, catch, finally
+
+throw keyword
+
+Closures & Scope
+
+Function scope, block scope
+
+Lexical scope
+
+Closures (real-life use cases)
+
+Prototype & Inheritance
+
+Prototypes & prototype chain
+
+ES6 Classes (class, constructor, extends, super)
+
+Modules
+
+export / import
+
+Default vs named exports
+
+Event Loop & Execution
+
+Call stack
+
+Event loop
+
+Microtasks & Macrotasks
+
+Practice
+
+Weather App using API
+
+Quiz app with timer
+
+Infinite scroll or pagination
+
+4. Expert / Modern JavaScript
+
+👉 Goal: Write production-level JS, optimize performance, and use modern features.
+
+Advanced ES6+ Features
+
+Set, Map, WeakSet, WeakMap
+
+Optional chaining (?.)
+
+Nullish coalescing (??)
+
+Dynamic imports
+
+Generators & Iterators
+
+Design Patterns
+
+Singleton
+
+Factory
+
+Observer
+
+Module pattern
+
+Performance & Best Practices
+
+Debouncing & Throttling
+
+Memoization
+
+Event delegation
+
+JavaScript with Browser APIs
+
+LocalStorage, SessionStorage
+
+Geolocation API
+
+Web Workers
+
+Canvas API
+
+Notifications API
+
+Testing & Debugging
+
+Debugging with Chrome DevTools
+
+Writing test cases (Jest/Mocha basics)
+
+Real Projects
+
+Chat app (using WebSocket / Firebase)
+
+E-commerce cart system
+
+Music player app
+
+Netflix/Youtube clone UI
+
+5. Beyond JavaScript (Next Steps)
+
+👉 Once you’re strong in JS, you can move into:
+
+Frontend Frameworks → React, Angular, Vue
+
+Backend with JS → Node.js, Express.js
+
+Databases → MongoDB, MySQL, PostgreSQL
+
+TypeScript (for large projects)

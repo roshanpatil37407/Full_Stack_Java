@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Advanced HTML Demo</title>
+
+  <!-- 🌍 Internationalization -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <!-- 📱 Progressive Web App -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#000000">
+
+  <!-- 📊 Structured Data (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Advanced HTML Features",
+    "author": {
+      "@type": "Person",
+      "name": "Roshan Patil"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TechSchool"
+    },
+    "datePublished": "2025-09-12"
+  }
+  </script>
+
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .card { border: 1px solid gray; padding: 15px; margin-bottom: 20px; }
+    .focusable { border: 1px dashed blue; padding: 10px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <!-- 🔒 Secure External Link -->
+  <div class="card">
+    <h2>Security Example</h2>
+    <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+      Visit Example Safely
+    </a>
+
+    <h3>Sandboxed Iframe</h3>
+    <iframe src="https://example.com" width="300" height="100"
+      sandbox="allow-scripts allow-forms"></iframe>
+  </div>
+
+  <!-- 🌍 Internationalization -->
+  <div class="card">
+    <h2>Internationalization</h2>
+    <p lang="en">Hello, how are you?</p>
+    <p lang="hi">नमस्ते, आप कैसे हैं?</p>
+    <p lang="ar" dir="rtl">مرحبا كيف حالك؟</p>
+  </div>
+
+  <!-- ♿ Accessibility -->
+  <div class="card" role="region" aria-label="Accessibility Section">
+    <h2>Accessibility</h2>
+    <button aria-label="Close menu">X</button>
+    <div tabindex="0" class="focusable">Focusable Div (Keyboard Tab works)</div>
+
+    <!-- Dialog Example -->
+    <div role="dialog" aria-modal="true" aria-labelledby="dialogTitle">
+      <h3 id="dialogTitle">Login</h3>
+      <input type="text" placeholder="Username">
+      <button>Submit</button>
+    </div>
+  </div>
+
+  <!-- 📱 Progressive Web App Info -->
+  <div class="card">
+    <h2>PWA Basics</h2>
+    <p>This page links to <code>manifest.json</code> and registers a service worker.</p>
+  </div>
+
+  <!-- 📱 Register Service Worker -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/sw.js")
+        .then(() => console.log("Service Worker Registered"));
+    }
+  </script>
+
+</body>
+</html>

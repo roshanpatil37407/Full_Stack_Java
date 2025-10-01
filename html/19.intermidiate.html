@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Multi-Section Site</title>
+</head>
+<body>
+  <header>
+    <h1>Tech Conference 2025</h1>
+    <nav>
+      <a href="#about">About</a> | 
+      <a href="#schedule">Schedule</a> | 
+      <a href="#register">Register</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- About Section -->
+    <section id="about">
+      <h2>About the Event</h2>
+      <p>Learn about AI, Web, and Cloud at our annual event.</p>
+      <iframe width="560" height="315" 
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+              title="Event Intro Video"
+              allowfullscreen></iframe>
+    </section>
+
+    <!-- Schedule -->
+    <section id="schedule">
+      <h2>Event Schedule</h2>
+      <ul>
+        <li>10 AM - Keynote</li>
+        <li>12 PM - Web Development Trends</li>
+        <li>2 PM - AI in 2025</li>
+      </ul>
+    </section>
+
+    <!-- Registration Form -->
+    <section id="register">
+      <h2>Register Now</h2>
+      <form>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required><br><br>
+
+        <label for="ticket">Ticket Type:</label>
+        <select id="ticket">
+          <option>General</option>
+          <option>VIP</option>
+        </select><br><br>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Tech Conference</p>
+  </footer>
+</body>
+</html>

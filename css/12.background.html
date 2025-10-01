@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Background Examples</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .box {
+      width: 300px;
+      height: 150px;
+      margin: 20px 0;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    /* 1. Solid color background */
+    .solid {
+      background-color: steelblue;
+    }
+
+    /* 2. Background image */
+    .image {
+      background-image: url("https://picsum.photos/400/200");
+      background-size: cover; /* fill box */
+      background-position: center; /* center image */
+    }
+
+    /* 3. Linear gradient */
+    .linear-gradient {
+      background: linear-gradient(to right, #ff7e5f, #feb47b);
+    }
+
+    /* 4. Radial gradient */
+    .radial-gradient {
+      background: radial-gradient(circle, #00c6ff, #0072ff);
+    }
+
+    /* 5. Multiple backgrounds */
+    .multiple {
+      background: 
+        url("https://www.transparenttextures.com/patterns/asfalt-light.png"), /* pattern */
+        linear-gradient(to right, #ff512f, #dd2476); /* gradient below */
+      background-blend-mode: overlay; /* mix them */
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 CSS Background Examples</h1>
+
+  <div class="box solid">1. Solid Color</div>
+  <div class="box image">2. Background Image</div>
+  <div class="box linear-gradient">3. Linear Gradient</div>
+  <div class="box radial-gradient">4. Radial Gradient</div>
+  <div class="box multiple">5. Multiple Backgrounds</div>
+
+  <p><b>Key properties:</b><br>
+    • <code>background-color</code> → solid color.<br>
+    • <code>background-image</code> → use image URL.<br>
+    • <code>background-size</code> → cover, contain, auto.<br>
+    • <code>background-position</code> → top, center, bottom.<br>
+    • <code>linear-gradient()</code>, <code>radial-gradient()</code> → gradients.<br>
+    • Multiple layers → separate with commas.<br>
+  </p>
+</body>
+</html>

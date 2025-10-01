@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Template Example</title>
+</head>
+<body>
+  <h2>Student List</h2>
+
+ 
+  <template id="studentTemplate">
+    <div class="student-card">
+      <h3 class="name"></h3>
+      <p class="course"></p>
+    </div>
+  </template>
+
+  <div id="students"></div>
+
+  <script>
+    const students = [
+      { name: "Aarav", course: "BCA" },
+      { name: "Sneha", course: "MBA" }
+    ];
+
+    const container = document.getElementById("students");
+    const template = document.getElementById("studentTemplate");
+
+    students.forEach(s => {
+      const clone = template.content.cloneNode(true);
+      clone.querySelector(".name").textContent = s.name;
+      clone.querySelector(".course").textContent = s.course;
+      container.appendChild(clone);
+    });
+  </script>
+</body>
+</html>

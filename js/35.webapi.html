@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web API Demo Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 { color: #333; }
+    button {
+      margin: 8px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      background: #007BFF;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover { background: #0056b3; }
+    #output {
+      margin-top: 20px;
+      padding: 15px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      min-height: 100px;
+    }
+    canvas {
+      margin-top: 15px;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌐 Web API Demo Dashboard</h1>
+
+  <button onclick="demoDOM()">DOM API</button>
+  <button onclick="demoStorage()">Storage API</button>
+  <button onclick="demoFetch()">Fetch API</button>
+  <button onclick="demoGeo()">Geolocation</button>
+  <button onclick="demoCanvas()">Canvas</button>
+  <button onclick="demoNotify()">Notifications</button>
+  <button onclick="demoSocket()">WebSocket</button>
+
+  <div id="output">👉 Click a button to see API in action</div>
+
+  <canvas id="myCanvas" width="300" height="150"></canvas>
+
+  <script>
+    // 1. DOM API
+    function demoDOM() {
+      document.getElementById("output").innerText = "Hello! This is DOM API demo 🚀";
+    }
+
+    // 2. Storage API
+    function demoStorage() {
+      localStorage.setItem("name", "Roshan");
+      let value = localStorage.getItem("name");
+      document.getElementById("output").innerText = "Stored in localStorage: " + value;
+    }
+
+    // 3. Fetch API
+    function demoFetch() {
+      fetch("https://jsonplaceholder.typicode.com/posts/1")
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById("output").innerText = "Fetched Title: " + data.title;
+        })
+        .catch(err => {
+          document.getElementById("output").innerText = "Fetch error: " + err;
+        });
+    }
+
+    // 4. Geolocation API
+    function demoGeo() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(pos => {
+          document.getElementById("output").innerText =
+            "Latitude: " + pos.coords.latitude + ", Longitude: " + pos.coords.longitude;
+        }, err => {
+          document.getElementById("output").innerText = "Geo error: " + err.message;
+        });
+      } else {
+        document.getElementById("output").innerText = "Geolocation not supported.";
+      }
+    }
+
+    // 5. Canvas API
+    function demoCanvas() {
+      let canvas = document.getElementById("myCanvas");
+      let ctx = canvas.getContext("2d");
+      ctx.fillStyle = "green";
+      ctx.fillRect(50, 50, 200, 80);
+      ctx.fillStyle = "white";
+      ctx.font = "20px Arial";
+      ctx.fillText("Canvas API!", 100, 100);
+      document.getElementById("output").innerText = "Canvas drawn 🎨";
+    }
+
+    // 6. Notifications API
+    function demoNotify() {
+      if (Notification.permission === "granted") {
+        new Notification("Hello from Web API!", { body: "This is a browser notification." });
+      } else {
+        Notification.requestPermission().then(permission => {
+          if (permission === "granted") {
+            new Notification("Permission Granted 🎉", { body: "Now you can see notifications." });
+          } else {
+            document.getElementById("output").innerText = "Notification permission denied.";
+          }
+        });
+      }
+    }
+
+    // 7. WebSocket API
+    function demoSocket() {
+      let socket = new WebSocket("wss://echo.websocket.events");
+      socket.onopen = () => socket.send("Hello WebSocket 🌍");
+      socket.onmessage = e => {
+        document.getElementById("output").innerText = "WebSocket reply: " + e.data;
+        socket.close();
+      };
+      socket.onerror = err => {
+        document.getElementById("output").innerText = "WebSocket error: " + err;
+      };
+    }
+  </script>
+</body>
+</html>

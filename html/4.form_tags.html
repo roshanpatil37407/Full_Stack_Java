@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      color: darkblue;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 500px;
+      margin: auto;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    }
+    label {
+      display: inline-block;
+      width: 120px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    input, textarea, select {
+      padding: 5px;
+      width: 60%;
+      margin-bottom: 10px;
+    }
+    .checkbox-group, .radio-group {
+      margin-bottom: 10px;
+    }
+    button {
+      background: darkblue;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: navy;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Student Registration Form</h2>
+
+  <form action="submit.php" method="post">
+    <!-- Text Inputs -->
+    <label for="fname">First Name:</label>
+    <input type="text" id="fname" name="firstname" required><br>
+
+    <label for="lname">Last Name:</label>
+    <input type="text" id="lname" name="lastname" required><br>
+
+    <!-- Email & Password -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br>
+
+    <!-- Number -->
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" min="15" max="40"><br>
+
+    <!-- Date -->
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob"><br>
+
+    <!-- Gender (Radio Buttons) -->
+    <label>Gender:</label>
+    <div class="radio-group">
+      <input type="radio" id="male" name="gender" value="Male">
+      <label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value="Female">
+      <label for="female">Female</label>
+      <input type="radio" id="other" name="gender" value="Other">
+      <label for="other">Other</label>
+    </div>
+
+    <!-- Hobbies (Checkboxes) -->
+    <label>Hobbies:</label>
+    <div class="checkbox-group">
+      <input type="checkbox" id="reading" name="hobbies" value="Reading">
+      <label for="reading">Reading</label>
+      <input type="checkbox" id="sports" name="hobbies" value="Sports">
+      <label for="sports">Sports</label>
+      <input type="checkbox" id="music" name="hobbies" value="Music">
+      <label for="music">Music</label>
+    </div>
+
+    <!-- Course Selection (Dropdown) -->
+    <label for="course">Course:</label>
+    <select id="course" name="course">
+      <option value="BCA">BCA</option>
+      <option value="B.Sc">B.Sc</option>
+      <option value="B.Tech">B.Tech</option>
+      <option value="MBA">MBA</option>
+    </select><br>
+
+    <!-- Address (Textarea) -->
+    <label for="address">Address:</label><br>
+    <textarea id="address" name="address" rows="4" cols="40"></textarea><br><br>
+
+    <!-- File Upload -->
+    <label for="photo">Upload Photo:</label>
+    <input type="file" id="photo" name="photo"><br><br>
+
+    <!-- Hidden Field -->
+    <input type="hidden" name="formType" value="StudentRegistration">
+
+    <!-- Buttons -->
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </form>
+
+</body>
+</html>

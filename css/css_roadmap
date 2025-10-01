@@ -1,0 +1,146 @@
+🌱 CSS Roadmap: Beginner → Advanced
+1️⃣ Basics of CSS (Foundation)
+
+👉 Learn how CSS works and applies to HTML.
+
+What CSS is & how to use it:
+
+Inline, Internal, External CSS
+
+CSS Syntax (selectors, properties, values)
+
+Colors (color, background-color, hex, RGB, HSL)
+
+Typography (fonts, font-size, font-family, font-weight)
+
+Text styling (text-align, text-decoration, line-height, letter-spacing)
+
+Box Model (margin, padding, border, box-sizing)
+
+Display types (block, inline, inline-block)
+
+Units (px, %, em, rem, vh, vw)
+
+✅ Practice:
+
+Style your HTML resume project with different fonts, colors, and spacing.
+
+2️⃣ Intermediate CSS (Layout + Styling Power)
+
+👉 Learn how to structure pages.
+
+Positioning (static, relative, absolute, fixed, sticky)
+
+Float & Clear (old layout method, still used)
+
+Flexbox (modern layout system – 1D)
+
+Grid (modern layout system – 2D)
+
+Backgrounds (images, gradients, multiple backgrounds)
+
+Borders, Shadows, Rounded corners
+
+Pseudo-classes (:hover, :focus, :nth-child)
+
+Pseudo-elements (::before, ::after)
+
+CSS Variables (--main-color)
+
+Media Queries (responsive design basics)
+
+✅ Practice:
+
+Create a responsive landing page clone using Flexbox/Grid.
+
+3️⃣ Advanced CSS (Modern Features & Animations)
+
+👉 Get into interactivity & performance.
+
+CSS Transitions (transition: all 0.3s ease;)
+
+CSS Animations (@keyframes)
+
+Transformations (rotate, scale, translate, skew)
+
+Advanced Selectors (:not(), :nth-child(), :nth-of-type())
+
+Advanced Positioning (z-index, stacking context)
+
+CSS Filters (blur, brightness, contrast)
+
+Clip-path & Shapes (circles, polygons, masks)
+
+Responsive Images (object-fit, aspect-ratio)
+
+Modern Layout Tricks (CSS Grid areas, auto-fit, minmax)
+
+✅ Practice:
+
+Build an interactive image gallery with hover effects + animations.
+
+4️⃣ Expert CSS (Performance & Architecture)
+
+👉 Professional-level concepts.
+
+CSS Architecture (BEM, OOCSS, SMACSS naming conventions)
+
+CSS Functions (calc(), clamp(), var())
+
+CSS Custom Properties (variables)
+
+Responsive Design Patterns (mobile-first, fluid layouts)
+
+Dark Mode (using prefers-color-scheme)
+
+CSS Accessibility (focus states, reduced motion media query)
+
+CSS Grid + Flexbox combination for complex layouts
+
+CSS Subgrid (new Grid feature)
+
+CSS Container Queries (new for responsive design)
+
+CSS Cascade Layers (@layer)
+
+CSS Nesting (coming soon in browsers)
+
+✅ Practice:
+
+Build a responsive multi-section website with dark mode toggle.
+
+5️⃣ Mastery (Cutting Edge + Tools)
+
+👉 Push CSS beyond basics.
+
+CSS Houdini (custom paint API – experimental)
+
+CSS-in-JS (React styled-components, Emotion)
+
+Preprocessors (Sass/SCSS, Less)
+
+PostCSS (autoprefixer, nesting)
+
+Performance Optimization (minification, critical CSS, lazy-loading styles)
+
+Tailwind CSS / Bootstrap (utility frameworks)
+
+Advanced Animations (GSAP with CSS)
+
+✅ Practice:
+
+Convert your blog layout into a PWA-ready styled site using SCSS/Tailwind.
+
+📌 Suggested Learning Path with Projects
+
+🎨 Style your Resume → Basics
+
+🏗 Landing Page Clone → Flexbox + Grid
+
+🖼 Image Gallery → Animations + Hover Effects
+
+📱 Responsive Blog → Media Queries + Variables
+
+🌙 Dark Mode Portfolio → Advanced CSS Features
+
+🚀 Deploy with GitHub Pages

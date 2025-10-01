@@ -1,0 +1,21 @@
+<!-- Custom element usage -->
+<user-card name="Roshan Patil" role="Web Developer"></user-card>
+
+<script>
+class UserCard extends HTMLElement {
+  constructor() {
+    super();
+    const shadow = this.attachShadow({mode: 'open'});
+    shadow.innerHTML = `
+      <style>
+        .card { border: 1px solid #ccc; padding: 1em; border-radius: 8px; }
+      </style>
+      <div class="card">
+        <h2>${this.getAttribute('name')}</h2>
+        <p>${this.getAttribute('role')}</p>
+      </div>
+    `;
+  }
+}
+customElements.define('user-card', UserCard);
+</script>

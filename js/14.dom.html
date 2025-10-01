@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation Practice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #myDiv {
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      background-color: #f0f0f0;
+    }
+    .myPara {
+      margin: 5px 0;
+      color: darkblue;
+    }
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      cursor: pointer;
+      background-color: teal;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>DOM Manipulation Demo</h1>
+
+  <!-- Div to manipulate -->
+  <div id="myDiv">This is a div</div>
+
+  <!-- Paragraphs -->
+  <p class="myPara">Paragraph 1</p>
+  <p class="myPara">Paragraph 2</p>
+
+  <!-- Buttons -->
+  <button id="changeTextBtn">Change Text & CSS</button>
+  <button id="addParaBtn">Add Paragraph</button>
+  <button id="removeParaBtn">Remove Last Paragraph</button>
+
+  <script>
+    // ===============================
+    // DOM Selection Examples
+    // ===============================
+    const div = document.getElementById("myDiv");
+    const paragraphs = document.getElementsByClassName("myPara");
+    const firstPara = document.querySelector(".myPara");
+    const allParas = document.querySelectorAll(".myPara");
+
+    console.log("div by ID:", div);
+    console.log("paragraphs by class:", paragraphs);
+    console.log("first paragraph by querySelector:", firstPara);
+    allParas.forEach((p, i) => console.log(`Paragraph ${i+1}:`, p.innerText));
+
+    // ===============================
+    // Change Text, HTML, and CSS
+    // ===============================
+    const changeTextBtn = document.getElementById("changeTextBtn");
+    changeTextBtn.addEventListener("click", () => {
+      div.innerText = "Text changed with JS!";
+      div.innerHTML += " <b>(HTML updated)</b>";
+      div.style.color = "white";
+      div.style.backgroundColor = "teal";
+      div.style.padding = "25px";
+      div.style.fontSize = "20px";
+    });
+
+    // ===============================
+    // Create New Paragraph Dynamically
+    // ===============================
+    const addParaBtn = document.getElementById("addParaBtn");
+    addParaBtn.addEventListener("click", () => {
+      const newPara = document.createElement("p");
+      newPara.innerText = "This is a dynamically added paragraph!";
+      newPara.className = "myPara";
+      newPara.style.color = "purple";
+      document.body.appendChild(newPara);
+    });
+
+    // ===============================
+    // Remove Last Paragraph Dynamically
+    // ===============================
+    const removeParaBtn = document.getElementById("removeParaBtn");
+    removeParaBtn.addEventListener("click", () => {
+      const allParagraphs = document.querySelectorAll(".myPara");
+      if(allParagraphs.length > 0) {
+        allParagraphs[allParagraphs.length - 1].remove();
+      } else {
+        alert("No more paragraphs to remove!");
+      }
+    });
+
+    // ===============================
+    // Event Handling Example
+    // ===============================
+    firstPara.addEventListener("mouseover", () => {
+      firstPara.style.color = "red";
+      firstPara.style.fontWeight = "bold";
+    });
+
+    firstPara.addEventListener("mouseout", () => {
+      firstPara.style.color = "darkblue";
+      firstPara.style.fontWeight = "normal";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Borders, Shadows & Rounded Corners</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background: #f9f9f9;
+      }
+
+      .box {
+        width: 250px;
+        height: 120px;
+        margin: 20px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        background: white;
+      }
+
+      /* 1. Border styles */
+      .solid {
+        border: 3px solid steelblue;
+      }
+      .dashed {
+        border: 3px dashed tomato;
+      }
+      .dotted {
+        border: 3px dotted green;
+      }
+      .double {
+        border: 6px double purple;
+      }
+      .mixed {
+        border-top: 4px solid red;
+        border-right: 4px dashed blue;
+        border-bottom: 4px dotted green;
+        border-left: 4px double orange;
+      }
+
+      /* 2. Rounded corners */
+      .rounded {
+        border: 3px solid teal;
+        border-radius: 15px;
+      }
+      .circle {
+        border: 3px solid brown;
+        border-radius: 50%;
+      }
+
+      /* 3. Box shadows */
+      .shadow {
+        border: 2px solid #ddd;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+      }
+      .inset {
+        border: 2px solid #ddd;
+        box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.3);
+      }
+      .glow {
+        border: 2px solid #ddd;
+        box-shadow: 0 0 20px 5px rgba(0, 150, 255, 0.6);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🎨 CSS Borders, Shadows & Rounded Corners</h1>
+
+    <h2>1️⃣ Borders</h2>
+    <div class="box solid">Solid Border</div>
+    <div class="box dashed">Dashed Border</div>
+    <div class="box dotted">Dotted Border</div>
+    <div class="box double">Double Border</div>
+    <div class="box mixed">Mixed Borders</div>
+
+    <h2>2️⃣ Rounded Corners</h2>
+    <div class="box rounded">Rounded Corners</div>
+    <div class="box circle">Circle (Border Radius 50%)</div>
+
+    <h2>3️⃣ Shadows</h2>
+    <div class="box shadow">Box Shadow</div>
+    <div class="box inset">Inset Shadow</div>
+    <div class="box glow">Glowing Shadow</div>
+
+    <p>
+      <b>Key properties:</b><br />
+      • <code>border</code> → style (solid, dashed, dotted, double).<br />
+      • <code>border-radius</code> → rounded corners / circle.<br />
+      • <code>box-shadow: x-offset y-offset blur spread color;</code> →
+      shadow.<br />
+      • <code>inset</code> → makes shadow appear inside element.<br />
+    </p>
+  </body>
+</html>

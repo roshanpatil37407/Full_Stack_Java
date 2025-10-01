@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Container Queries Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .card-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* Container for each card */
+    .card {
+      container-type: inline-size; /* Enable container query */
+      container-name: card;        /* Give it a name */
+      border: 2px solid #333;
+      padding: 20px;
+      flex: 1 1 250px;
+      background: #f9f9f9;
+    }
+
+    .card h2 {
+      font-size: 1.2rem;
+      margin-top: 0;
+    }
+
+    /* Default layout */
+    .card .content {
+      display: block;
+    }
+
+    /* Container Query → If card width >= 400px */
+    @container card (min-width: 400px) {
+      .card .content {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+      }
+
+      .card img {
+        width: 120px;
+        height: auto;
+        border-radius: 8px;
+      }
+
+      .card h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>📦 CSS Container Queries Demo</h1>
+  <p>Resize the window or cards to see them change independently!</p>
+
+  <div class="card-container">
+    <div class="card">
+      <div class="content">
+        <img src="https://via.placeholder.com/120" alt="Sample">
+        <div>
+          <h2>Card 1</h2>
+          <p>This card changes its layout when its container is wider than 400px.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="content">
+        <img src="https://via.placeholder.com/120" alt="Sample">
+        <div>
+          <h2>Card 2</h2>
+          <p>Each card responds to its own width, not the whole page!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

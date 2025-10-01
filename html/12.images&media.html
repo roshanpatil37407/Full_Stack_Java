@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Images & Media Example</title>
+</head>
+<body>
+
+  <h2>1. Responsive Image (srcset & sizes)</h2>
+  <img 
+    src="https://via.placeholder.com/400" 
+    srcset="
+      https://via.placeholder.com/300 300w,
+      https://via.placeholder.com/600 600w,
+      https://via.placeholder.com/900 900w"
+    sizes="(max-width: 600px) 300px, (max-width: 900px) 600px, 900px"
+    alt="Beautiful Sunset">
+
+  <h2>2. Picture Element</h2>
+  <picture>
+    <source srcset="https://via.placeholder.com/800x400" media="(min-width: 800px)">
+    <source srcset="https://via.placeholder.com/400x200" media="(max-width: 799px)">
+    <img src="https://via.placeholder.com/600x300" alt="Responsive Landscape">
+  </picture>
+
+  <h2>3. Figure with Figcaption</h2>
+  <figure>
+    <img src="https://via.placeholder.com/500x300" alt="Nature">
+    <figcaption>A peaceful nature view with mountains and trees.</figcaption>
+  </figure>
+
+  <h2>4. Audio Example</h2>
+  <audio controls>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio>
+
+  <h2>5. Video Example</h2>
+  <video width="400" controls poster="https://via.placeholder.com/400x200">
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+</body>
+</html>

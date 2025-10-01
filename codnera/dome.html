@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="id">DOME</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo, temporibus magni molestias rem odit laborum itaque consequuntur aliquam, quis dolore excepturi quidem praesentium placeat, omnis necessitatibus esse nihil quasi iste?</p>
+    <p>demo of dom</p>
+    <p id="un"> </p>
+
+    <p class="class"> </p>
+
+    <p class="cl">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed ipsa officiis blanditiis nulla perspiciatis, quam voluptatum ea adipisci, fugiat rem illo, omnis aspernatur fugit quidem natus nisi sit corporis facere?</p>
+    
+    
+    <Script>
+        document.getElementById("id").style.color="aqua";
+        document.getElementById("id").style.backgroundColor="grey";
+        const para=document.getElementsByTagName("P")
+         document.getElementById("un").innerHTML=para[0].innerHTML;
+
+         const p=document.getElementsByClassName("class")
+         p[0].innerHTML="hello this is class tag";
+
+         document.getElementsByClassName("cl")[0].style.color="pink";
+         document.getElementsByClassName("cl")[0].style.backgroundColor="grey";
+
+    </Script>
+</body>
+</html>

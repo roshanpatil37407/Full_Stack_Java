@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Filters Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      text-align: center;
+      background: #fafafa;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .box {
+      width: 250px;
+      height: 150px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      position: relative;
+    }
+
+    .box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.4s ease;
+    }
+
+    .box p {
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      padding: 5px;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    /* 🔹 Different filters */
+    .blur img { filter: blur(3px); }
+    .brightness img { filter: brightness(1.5); }
+    .contrast img { filter: contrast(180%); }
+    .grayscale img { filter: grayscale(100%); }
+    .sepia img { filter: sepia(100%); }
+
+    /* Hover reset to show original */
+    .box img:hover {
+      filter: none;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <h1>✨ CSS Filters Examples</h1>
+  <p>Hover over each image to remove the filter.</p>
+
+  <div class="container">
+    <div class="box blur">
+      <img src="https://picsum.photos/id/1016/400/250" alt="Blur">
+      <p>Blur</p>
+    </div>
+
+    <div class="box brightness">
+      <img src="https://picsum.photos/id/1025/400/250" alt="Brightness">
+      <p>Brightness</p>
+    </div>
+
+    <div class="box contrast">
+      <img src="https://picsum.photos/id/1003/400/250" alt="Contrast">
+      <p>Contrast</p>
+    </div>
+
+    <div class="box grayscale">
+      <img src="https://picsum.photos/id/1011/400/250" alt="Grayscale">
+      <p>Grayscale</p>
+    </div>
+
+    <div class="box sepia">
+      <img src="https://picsum.photos/id/1005/400/250" alt="Sepia">
+      <p>Sepia</p>
+    </div>
+  </div>
+</body>
+</html>

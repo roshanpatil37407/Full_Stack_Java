@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Pseudo-Classes Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    /* 1. :hover */
+    .hover-box {
+      width: 200px;
+      height: 100px;
+      background: steelblue;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      transition: 0.3s;
+      border-radius: 8px;
+    }
+    .hover-box:hover {
+      background: tomato;
+      transform: scale(1.1);
+    }
+
+    /* 2. :focus */
+    input {
+      padding: 10px;
+      border: 2px solid gray;
+      border-radius: 5px;
+      outline: none;
+      transition: 0.3s;
+    }
+    input:focus {
+      border-color: blue;
+      background: #e6f0ff;
+    }
+
+    /* 3. :nth-child */
+    ul li {
+      padding: 8px;
+      margin: 3px 0;
+      background: #f0f0f0;
+    }
+    ul li:nth-child(odd) {
+      background: #d1f7d6; /* odd items greenish */
+    }
+    ul li:nth-child(even) {
+      background: #ffd6d6; /* even items reddish */
+    }
+    ul li:nth-child(3) {
+      font-weight: bold;
+      color: darkred;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 CSS Pseudo-Class Examples</h1>
+
+  <h2>1️⃣ :hover</h2>
+  <div class="hover-box">Hover over me!</div>
+
+  <h2>2️⃣ :focus</h2>
+  <p>Click inside the input box to see <code>:focus</code> effect:</p>
+  <input type="text" placeholder="Type here...">
+
+  <h2>3️⃣ :nth-child</h2>
+  <p>List styled using <code>:nth-child</code> (odd/even/3rd item special):</p>
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3 (special)</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+  </ul>
+</body>
+</html>

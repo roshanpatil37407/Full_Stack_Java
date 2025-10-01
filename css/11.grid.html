@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Grid Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+      grid-template-rows: auto 150px auto;   /* custom row heights */
+      gap: 15px;  /* space between items */
+      border: 2px solid black;
+      padding: 15px;
+      background: #f8f8f8;
+    }
+
+    .item {
+      background: steelblue;
+      color: white;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+    }
+
+    /* Examples of grid positioning */
+    .item1 {
+      grid-column: 1 / 3; /* spans column 1 to 2 */
+      grid-row: 1;        /* stays in row 1 */
+      background: tomato;
+    }
+    .item2 {
+      grid-column: 3;     /* only in column 3 */
+      grid-row: 1 / 3;    /* spans two rows */
+      background: seagreen;
+    }
+    .item3 { background: purple; }
+    .item4 { background: darkorange; }
+    .item5 { background: gray; }
+    .item6 { background: teal; }
+  </style>
+</head>
+<body>
+  <h1>🎯 CSS Grid Example</h1>
+
+  <div class="grid-container">
+    <div class="item item1">1 (spans 2 columns)</div>
+    <div class="item item2">2 (spans 2 rows)</div>
+    <div class="item item3">3</div>
+    <div class="item item4">4</div>
+    <div class="item item5">5</div>
+    <div class="item item6">6</div>
+  </div>
+
+  <p>
+    <b>Key Grid concepts:</b><br>
+    - <code>grid-template-columns / rows</code> → define structure.<br>
+    - <code>gap</code> → space between grid cells.<br>
+    - <code>grid-column / grid-row</code> → place items across multiple rows/columns.<br>
+    - <code>repeat()</code> + <code>fr</code> → flexible units.<br>
+  </p>
+</body>
+</html>

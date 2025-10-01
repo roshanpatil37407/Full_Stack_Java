@@ -1,0 +1,360 @@
+🔹 Basic JavaScript Interview Q&A
+
+1. What is JavaScript? How is it different from Java?
+
+👉 JavaScript is a lightweight, interpreted, single-threaded programming language used mainly for web development to make web pages interactive.
+
+Java: Compiled, strongly typed, OOP language.
+
+JavaScript: Interpreted, dynamically typed, scripting language.
+
+2. What are the different data types in JavaScript?
+
+Primitive types: string, number, boolean, null, undefined, symbol, bigint
+
+Non-primitive types: objects, arrays, functions
+
+3. What is the difference between var, let, and const?
+
+var: function-scoped, hoisted, can be redeclared.
+
+let: block-scoped, not hoisted the same way, can be reassigned but not redeclared.
+
+const: block-scoped, cannot be reassigned.
+
+4. Explain == vs ===.
+
+== → Loose equality (does type coercion).
+
+=== → Strict equality (checks value + type).
+
+5 == "5"; // true
+5 === "5"; // false
+
+5. What are truthy and falsy values?
+
+Falsy: false, 0, "", null, undefined, NaN
+
+Truthy: All other values (e.g. "hello", [], {}, 1)
+
+6. What is hoisting in JavaScript?
+
+👉 Hoisting means variables and functions are moved to the top of their scope before execution.
+
+console.log(x); // undefined
+var x = 5;
+
+7. Difference between null and undefined?
+
+null: intentional empty value.
+
+undefined: variable declared but not assigned.
+
+8. Explain scope in JavaScript.
+
+Global Scope: variables accessible everywhere.
+
+Function Scope: variables accessible only inside a function.
+
+Block Scope: variables defined with let & const only inside {}.
+
+9. What are template literals?
+
+👉 Strings using backticks `, allowing interpolation.
+
+let name = "Roshan";
+console.log(`Hello, ${name}!`);
+
+10. Function declaration vs function expression?
+
+Declaration: Named, hoisted.
+
+function add(a, b) { return a+b; }
+
+Expression: Stored in variable, not hoisted.
+
+const add = function(a, b) { return a+b; }
+
+🔹 Intermediate JavaScript Interview Q&A 11. Difference between call(), apply(), and bind()?
+
+call(): Calls function with arguments individually.
+
+apply(): Calls function with arguments as an array.
+
+bind(): Returns a new function with fixed this.
+
+12. What are arrow functions? How are they different?
+
+👉 Shorter syntax for functions.
+
+Do not have their own this.
+
+Cannot be used as constructors.
+
+const add = (a, b) => a + b;
+
+13. What are closures? Give example.
+
+👉 A closure is when a function remembers variables from its outer scope even after the scope has closed.
+
+function outer() {
+let count = 0;
+return function() {
+count++;
+return count;
+};
+}
+const counter = outer();
+console.log(counter()); // 1
+console.log(counter()); // 2
+
+14. What is the event loop in JavaScript?
+
+👉 It’s the mechanism that allows async code (callbacks, promises) to run after synchronous code has finished.
+
+Call Stack
+
+Web APIs
+
+Callback Queue
+
+Event Loop
+
+15. Synchronous vs Asynchronous?
+
+Synchronous: Code executes line by line.
+
+Asynchronous: Code executes without blocking (e.g. setTimeout, Promises, async/await).
+
+16. Explain Promises (.then, .catch).
+
+👉 A promise is an object representing the eventual completion or failure of an async operation.
+
+fetch("data.json")
+.then(res => res.json())
+.then(data => console.log(data))
+.catch(err => console.error(err));
+
+17. What is async/await?
+
+👉 A syntactic sugar for promises, making async code look synchronous.
+
+async function fetchData() {
+try {
+let res = await fetch("data.json");
+let data = await res.json();
+console.log(data);
+} catch(err) {
+console.error(err);
+}
+}
+
+18. Shallow vs Deep copy?
+
+Shallow copy: Copies only top-level (changes in nested objects affect both).
+
+Deep copy: Completely clones object.
+
+let obj = {a:1, b:{c:2}};
+let shallow = {...obj};
+let deep = JSON.parse(JSON.stringify(obj));
+
+19. Difference between map(), forEach(), filter(), reduce()?
+
+map(): transforms each element, returns new array.
+
+forEach(): iterates but does not return new array.
+
+filter(): returns elements that match condition.
+
+reduce(): reduces array to single value.
+
+20. Difference between == and Object.is()?
+
+== → loose equality.
+
+Object.is() → strict comparison but handles special cases better.
+
+Object.is(NaN, NaN); // true
+NaN === NaN; // false
+
+✅ These are top 20 most asked JS questions with answers.
+
+👉 Do you want me to also prepare advanced-level (Prototype, Inheritance, Event Loop, Design Patterns) with answers so you can cover full interview prep?
+
+You said:
+yes
+ChatGPT said:
+
+Awesome 🚀 Let’s now cover Advanced JavaScript Interview Questions & Answers with explanations.
+These are the ones asked when interviewers want to check deep knowledge.
+
+🔹 Advanced JavaScript Interview Q&A 21. What is the prototype chain in JavaScript?
+
+👉 Every JS object has a hidden property [[Prototype]] (accessible via **proto**).
+
+When you try to access a property, JS first looks in the object.
+
+If not found, it goes up the prototype chain until it reaches Object.prototype.
+
+let arr = [1,2,3];
+console.log(arr.**proto** === Array.prototype); // true
+
+22. Explain this keyword in different contexts.
+
+In global scope → refers to window (browser).
+
+Inside an object method → refers to that object.
+
+Inside a function → undefined in strict mode, window otherwise.
+
+In arrow functions → takes this from outer scope.
+
+In class → refers to the current instance.
+
+23. What are ES6 classes? How do they work with inheritance?
+
+👉 Classes are syntactic sugar over prototypes.
+
+class Animal {
+constructor(name) { this.name = name; }
+speak() { console.log(this.name + " makes a sound"); }
+}
+
+class Dog extends Animal {
+constructor(name) { super(name); }
+speak() { console.log(this.name + " barks"); }
+}
+
+let d = new Dog("Tommy");
+d.speak(); // Tommy barks
+
+24. What are modules in JavaScript (import / export)?
+
+👉 Modules allow code splitting into multiple files.
+
+math.js
+
+export const add = (a, b) => a+b;
+export default function sub(a, b) { return a-b; }
+
+app.js
+
+import sub, { add } from "./math.js";
+console.log(add(5,3)); // 8
+console.log(sub(5,3)); // 2
+
+25. What are generators and iterators?
+
+Iterator: An object with next() method returning {value, done}.
+
+Generator: A function that can pause & resume using yield.
+
+function\* gen() {
+yield 1;
+yield 2;
+yield 3;
+}
+let g = gen();
+console.log(g.next().value); // 1
+console.log(g.next().value); // 2
+
+26. Difference between Set, Map, WeakSet, WeakMap?
+
+Set: Collection of unique values.
+
+Map: Key-value pairs, keys can be any type.
+
+WeakSet: Only objects, no duplicates, weakly held (garbage collected).
+
+WeakMap: Keys must be objects, values can be any type.
+
+27. Explain optional chaining (?.) and nullish coalescing (??).
+
+Optional chaining (?.) → avoids errors when accessing deep properties.
+
+let user = {};
+console.log(user.address?.city); // undefined
+
+Nullish coalescing (??) → fallback only for null or undefined.
+
+let val = null ?? "default";
+console.log(val); // default
+
+28. What are microtasks and macrotasks in the event loop?
+
+Macrotasks → executed by event loop (setTimeout, setInterval).
+
+Microtasks → higher priority (Promises, queueMicrotask).
+
+console.log("start");
+setTimeout(()=>console.log("macrotask"),0);
+Promise.resolve().then(()=>console.log("microtask"));
+console.log("end");
+
+// Output: start → end → microtask → macrotask
+
+29. What is event delegation in JavaScript?
+
+👉 Attaching a single event listener to a parent element to handle events for its children (using event bubbling).
+
+document.getElementById("list").addEventListener("click", function(e){
+if(e.target.tagName === "LI"){
+console.log("Clicked:", e.target.innerText);
+}
+});
+
+30. What are debouncing and throttling?
+
+Debounce → Executes a function after a delay (good for search box).
+
+Throttle → Executes a function at fixed intervals (good for scroll events).
+
+31. Explain design patterns in JavaScript.
+
+Singleton → Only one instance of object.
+
+Factory → Creates objects without specifying class.
+
+Observer → One-to-many dependency (used in events).
+
+Module → Organizes code into reusable chunks.
+
+32. How does garbage collection work in JS?
+
+👉 JS uses reference counting + mark-and-sweep.
+Objects with no references are automatically removed from memory.
+
+33. Difference between localStorage, sessionStorage, and cookies?
+
+localStorage: Stores data permanently (until manually cleared).
+
+sessionStorage: Stores data until browser tab is closed.
+
+cookies: Stores small data, sent with every HTTP request.
+
+34. How do you handle errors in JS?
+
+👉 Using try, catch, finally and throw.
+
+try {
+throw new Error("Something went wrong!");
+} catch(err) {
+console.log(err.message);
+} finally {
+console.log("Cleanup runs always");
+}
+
+35. How do you optimize JavaScript performance?
+
+Minimize DOM manipulations.
+
+Use debouncing/throttling for events.
+
+Use async/await for non-blocking code.
+
+Cache results (memoization).
+
+Use Web Workers for heavy tasks.
+
+Minify & bundle JS files.

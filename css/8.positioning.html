@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Positioning Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      height: 2000px; /* for scroll demo */
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .box {
+      width: 200px;
+      height: 100px;
+      color: white;
+      text-align: center;
+      line-height: 100px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    /* 1. Static */
+    .static {
+      background: #6c757d;
+      position: static;
+    }
+
+    /* 2. Relative */
+    .relative {
+      background: #007bff;
+      position: relative;
+      top: 20px;
+      left: 30px;
+    }
+
+    /* 3. Absolute */
+    .absolute-container {
+      position: relative; /* parent positioning */
+      height: 200px;
+      border: 2px dashed #333;
+      margin: 40px 0;
+    }
+    .absolute {
+      background: #28a745;
+      position: absolute;
+      top: 40px;
+      right: 20px;
+    }
+
+    /* 4. Fixed */
+    .fixed {
+      background: #dc3545;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 150px;
+      height: 50px;
+      line-height: 50px;
+    }
+
+    /* 5. Sticky */
+    .sticky {
+      background: #ffc107;
+      position: sticky;
+      top: 0; /* sticks at top */
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>📍 CSS Positioning Types</h1>
+
+  <div class="box static">Static</div>
+  <p>➡️ Static: Default flow, no positioning applied.</p>
+
+  <div class="box relative">Relative</div>
+  <p>➡️ Relative: Shifted 20px down & 30px right but original space is kept.</p>
+
+  <div class="absolute-container">
+    Container (relative)
+    <div class="box absolute">Absolute</div>
+  </div>
+  <p>➡️ Absolute: Positioned inside the nearest positioned parent (here the container).</p>
+
+  <div class="box sticky">Sticky Header</div>
+  <p>➡️ Sticky: Scroll down, this will stick to the top until container ends.</p>
+
+  <p style="margin-top:500px;">Keep scrolling...</p>
+
+  <div class="box fixed">Fixed</div>
+  <p>➡️ Fixed: Always stays in viewport (top-right corner).</p>
+</body>
+</html>

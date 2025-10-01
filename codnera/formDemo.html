@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Example</title>
+</head>
+<body>
+
+<h2>Student Form</h2>
+<form id="myForm">
+  Name: <input type="text" name="name"><br><br>
+  Age: <input type="number" name="age"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<h3>Entered Data:</h3>
+<div id="output"></div>
+
+<script>
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // stop page refresh
+
+    let formData = new FormData(this);
+    let name = formData.get("name");
+    let age = formData.get("age");
+
+    document.getElementById("output").innerHTML =
+      "Name: " + name + "<br>Age: " + age;
+  });
+</script>
+
+</body>
+</html>

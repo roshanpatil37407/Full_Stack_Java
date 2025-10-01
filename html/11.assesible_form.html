@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Form Example</title>
+</head>
+<body>
+
+  <h2>Student Registration Form</h2>
+
+  <form>
+    <!-- Group 1: Personal Info -->
+    <fieldset>
+      <legend>Personal Information</legend>
+      
+      <label for="fullname">Full Name:</label>
+      <input type="text" id="fullname" name="fullname" aria-required="true"><br><br>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" aria-required="true"><br><br>
+      
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age">
+    </fieldset>
+    <br>
+
+    <!-- Group 2: Login Info -->
+    <fieldset>
+      <legend>Account Information</legend>
+      
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username"><br><br>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" aria-describedby="passwordHelp">
+      <small id="passwordHelp">Must be at least 8 characters.</small>
+    </fieldset>
+    <br>
+
+    <button type="submit">Register</button>
+  </form>
+
+</body>
+</html>

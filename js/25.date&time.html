@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Clock</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #1d2b64, #f8cdda);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+      color: #fff;
+    }
+
+    #showtime {
+      font-size: 4rem;
+      font-weight: bold;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 20px 40px;
+      border-radius: 20px;
+      box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    #showtime:hover {
+      transform:rotate(5deg);
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    #showdate {
+      margin-top: 20px;
+      font-size: 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 25px;
+      border-radius: 15px;
+      text-align: center;
+      transition: background 0.3s ease-in-out;
+    }
+
+    #showdate:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+  </style>
+</head>
+<body>
+  <div id="showtime"></div>
+  <div id="showdate"></div>
+
+  <script>
+    function showtime() {
+      let time = new Date();
+      let h = time.getHours();
+      let m = time.getMinutes();
+      let s = time.getSeconds();
+      let session = "AM";
+
+      if (h == 0) {
+        h = 12;
+      }
+      if (h > 12) {
+        h = h - 12;
+        session = "PM";
+      }
+
+      h = (h < 10) ? "0" + h : h;
+      m = (m < 10) ? "0" + m : m;
+      s = (s < 10) ? "0" + s : s;
+
+      let timeformat = h + ":" + m + ":" + s + " " + session;
+      document.getElementById("showtime").innerText = timeformat;
+      setTimeout(showtime, 1000);
+    }
+    showtime();
+
+    function showdate() {
+      let date = new Date();
+
+      let date1 = date.getDate();
+      let month1 = date.getMonth() + 1; 
+      let year = date.getFullYear();
+
+      date1 = (date1 < 10) ? "0" + date1 : date1;
+      month1 = (month1 < 10) ? "0" + month1 : month1;
+
+      let formatedate = date1 + "-" + month1 + "-" + year;
+      document.getElementById("showdate").innerText = formatedate;
+    }
+    showdate();
+  </script>
+</body>
+</html>

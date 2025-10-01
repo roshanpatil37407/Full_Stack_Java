@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Click Events Demo</title>
+    <style>
+      button {
+        margin: 5px;
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+      #output {
+        margin-top: 15px;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Click Events Demo</h1>
+
+    <button id="clickBtn">Click Me</button>
+    <button id="dblClickBtn">Double Click Me</button>
+    <button id="rightClickBtn">Right Click Me</button>
+
+    <div id="output">Event output will appear here.</div>
+
+    <script>
+      const output = document.getElementById("output");
+
+     
+ // Single click
+      document.getElementById("clickBtn").addEventListener("click", () => {
+        output.innerText = "You clicked the button!";
+      });
+
+      // Double click
+      document
+        .getElementById("dblClickBtn")
+        .addEventListener("dblclick", () => {
+          output.innerText = "You double-clicked the button!";
+        });
+
+      // Right click / context menu
+      document
+        .getElementById("rightClickBtn")
+        .addEventListener("contextmenu", (e) => {
+          e.preventDefault(); // prevent context menu
+          output.innerText = "Right-click detected!";
+        });
+
+      
+    </script>
+  </body>
+</html>

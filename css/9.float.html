@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Float & Clear Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .box {
+      width: 150px;
+      height: 100px;
+      margin: 10px;
+      padding: 10px;
+      color: white;
+      text-align: center;
+      line-height: 100px;
+    }
+
+    .left {
+      float: left;
+      background: steelblue;
+    }
+
+    .right {
+      float: right;
+      background: seagreen;
+    }
+
+    .no-float {
+      background: tomato;
+    }
+
+    .clear-left {
+      clear: left;   /* clears floated elements on the left side */
+      background: purple;
+    }
+
+    .clear-right {
+      clear: right;  /* clears floated elements on the right side */
+      background: darkorange;
+    }
+
+    .clear-both {
+      clear: both;   /* clears both left & right floats */
+      background: gray;
+    }
+
+    .container {
+      border: 2px solid black;
+      overflow: auto; /* modern way to contain floats */
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🖼️ CSS Float & Clear Examples</h1>
+
+  <div class="container">
+    <div class="box left">Float Left</div>
+    <div class="box right">Float Right</div>
+    <div class="box no-float">No Float</div>
+    <div class="box clear-left">Clear Left</div>
+    <div class="box clear-right">Clear Right</div>
+    <div class="box clear-both">Clear Both</div>
+  </div>
+
+  <p>
+    The <b>float</b> property pushes elements to the left or right, allowing text or other elements to wrap around them.  
+    The <b>clear</b> property forces an element to move below floated elements.
+  </p>
+</body>
+</html>

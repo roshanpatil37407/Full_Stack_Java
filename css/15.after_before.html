@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Pseudo-Elements Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    /* 1. Using ::before */
+    .before-example::before {
+      content: "👉 "; /* adds content before */
+      color: green;
+      font-weight: bold;
+    }
+
+    /* 2. Using ::after */
+    .after-example::after {
+      content: " ✔"; /* adds content after */
+      color: blue;
+      font-weight: bold;
+    }
+
+    /* 3. Styling with shapes (badges, decorations) */
+    .badge {
+      position: relative;
+      display: inline-block;
+      padding: 10px 20px;
+      background: steelblue;
+      color: white;
+      border-radius: 6px;
+    }
+    .badge::after {
+      content: "NEW!";
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: tomato;
+      color: white;
+      font-size: 12px;
+      padding: 2px 6px;
+      border-radius: 12px;
+    }
+
+    /* 4. Underline effect using ::after */
+    .underline-effect {
+      position: relative;
+      display: inline-block;
+    }
+    .underline-effect::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(to right, tomato, orange);
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 CSS Pseudo-Elements ::before & ::after</h1>
+
+  <h2>1️⃣ ::before Example</h2>
+  <p class="before-example">This text has a prefix icon.</p>
+
+  <h2>2️⃣ ::after Example</h2>
+  <p class="after-example">This text has a suffix icon.</p>
+
+  <h2>3️⃣ Badge with ::after</h2>
+  <div class="badge">Notification</div>
+
+  <h2>4️⃣ Underline Decoration with ::after</h2>
+  <p class="underline-effect">Fancy Underline Effect</p>
+
+  <p><b>Key points:</b><br>
+    • <code>::before</code> → inserts content before the element.<br>
+    • <code>::after</code> → inserts content after the element.<br>
+    • Both need <code>content</code> property (can be text, quotes, or empty "").<br>
+    • Often used for icons, badges, highlights, and decorative effects.<br>
+  </p>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My First Website</title>
+  <style>
+    /* Global Styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      scroll-behavior: smooth;
+      background-color: #f9f9f9;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background-color: #333;
+      padding: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+    nav ul li {
+      display: inline;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: yellow;
+    }
+
+    /* Sections */
+    section {
+      padding: 40px;
+      text-align: center;
+    }
+
+    /* Video */
+    video {
+      display: block;
+      margin: 20px auto;
+      max-width: 80%;
+      border-radius: 10px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #333;
+      color: white;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+ 
+  <nav>
+    <ul>
+      <li><a href="#Home">Home</a></li>
+      <li><a href="#About">About</a></li>
+      <li><a href="#Services">Services</a></li>
+      <li><a href="#Gallery">Gallery</a></li>
+      <li><a href="#Contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  
+  <section id="Home">
+    <h1>My First Website</h1>
+    <video controls autoplay loop muted>
+      <source src="https://cdn.pixabay.com/video/2016/09/13/5194-183786499_large.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis doloremque, ipsum dicta soluta repudiandae veniam voluptatum voluptatibus necessitatibus sit doloribus dignissimos pariatur, ea nihil debitis placeat distinctio? Maxime, necessitatibus nulla?</p> </section>
+
+  
+  <section id="About">
+    <h2>About Me</h2>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit molestias fuga quos numquam blanditiis fugit deleniti provident atque minus quaerat. Vero quasi libero ad cupiditate fugiat aliquam veniam debitis error.</p> </section>
+
+
+  <section id="Services">
+    <h2>Services</h2>
+    <p>Here are some services I plan to showcase in the future:</p>
+    <ul style="list-style:none; padding:0;">
+      <li>✔ Data Entry & Back Office Support</li>
+      <li>✔ Web Development (HTML, CSS, JavaScript, PHP)</li>
+      <li>✔ Database Management</li>
+      <li>✔ WordPress & Blogging</li>
+    </ul>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="Gallery">
+    <h2>Gallery</h2>
+    <p>Here are some sample images for practice:</p>
+    <img src="https://via.placeholder.com/250" alt="Sample Image" style="margin:10px; border-radius:8px;">
+    <img src="https://via.placeholder.com/250" alt="Sample Image" style="margin:10px; border-radius:8px;">
+    <img src="https://via.placeholder.com/250" alt="Sample Image" style="margin:10px; border-radius:8px;">
+  </section>
+
+  <!-- Contact Section -->
+  <section id="Contact">
+    <h2>Contact Me</h2>
+    <form>
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" placeholder="Enter your name"><br><br>
+
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" placeholder="Enter your email"><br><br>
+
+      <textarea rows="4" cols="30" placeholder="Your message"></textarea><br><br>
+
+      <input type="submit" value="Submit">
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 My First Website | Designed by Me</p>
+  </footer>
+
+</body>
+</html>

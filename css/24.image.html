@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clip-path & Responsive Images</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f7f7f7;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .shape {
+      width: 250px;
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .shape img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Responsive crop */
+      transition: 0.4s;
+    }
+
+    /* 🔹 Circle Shape */
+    .circle {
+      clip-path: circle(50% at 50% 50%);
+    }
+
+    /* 🔹 Polygon Shape (triangle) */
+    .triangle {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
+
+    /* 🔹 Hexagon Shape */
+    .hexagon {
+      clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    }
+
+    /* 🔹 Mask Example (with gradient) */
+    .mask {
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-size: cover;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+      mask-repeat: no-repeat;
+      mask-size: cover;
+    }
+
+    /* 🔹 Aspect-ratio (perfect square/landscape) */
+    .aspect {
+      width: 300px;
+      aspect-ratio: 16 / 9; /* Always 16:9 ratio */
+      overflow: hidden;
+    }
+
+    .aspect img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .shape:hover img {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 Clip-path, Shapes & Responsive Images</h1>
+
+  <div class="container">
+    <div class="shape circle">
+      <img src="https://picsum.photos/id/1015/400/400" alt="Circle Shape">
+    </div>
+    <div class="shape triangle">
+      <img src="https://picsum.photos/id/1025/400/400" alt="Triangle Shape">
+    </div>
+    <div class="shape hexagon">
+      <img src="https://picsum.photos/id/1035/400/400" alt="Hexagon Shape">
+    </div>
+    <div class="shape mask">
+      <img src="https://picsum.photos/id/1045/400/400" alt="Masked Shape">
+    </div>
+    <div class="shape aspect">
+      <img src="https://picsum.photos/id/1055/400/400" alt="Aspect Ratio">
+    </div>
+  </div>
+
+  <p style="margin-top:20px;">
+    ✅ <b>Explanation:</b><br>
+    - <code>clip-path</code> creates custom shapes (circle, polygon, hexagon).<br>
+    - <code>mask-image</code> allows gradient-based or image-based masking.<br>
+    - <code>object-fit</code> ensures images scale correctly inside container.<br>
+    - <code>aspect-ratio</code> maintains fixed ratios (e.g., 16:9).<br>
+  </p>
+</body>
+</html>
