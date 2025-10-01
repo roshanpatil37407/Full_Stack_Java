@@ -1,0 +1,28 @@
+package loging;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
+
+@WebServlet("/servlet")
+public class Loging extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    public Loging() {}
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException {
+        
+        // Get values from form
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+
+        // Simple validation (dummy check)
+        if("admin".equals(username) && "1234".equals(password)) {
+            response.getWriter().println("Login Successful! Welcome, " + username);
+        } else {
+            response.getWriter().println("Invalid Username or Password");
+        }
+    }
+}

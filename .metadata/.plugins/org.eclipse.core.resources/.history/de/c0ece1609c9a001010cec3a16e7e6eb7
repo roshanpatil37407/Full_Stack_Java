@@ -1,0 +1,47 @@
+package jdbc;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class EmployeeNewDemo {
+
+    public static void main(String[] args) {
+        try {
+            // 1. Load driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // 2. Connect to database
+            Connection con = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/demo", "root", "root");
+
+            // 3. Insert query
+            String insertQuery = "INSERT INTO employee_new (name, salary) VALUES (?, ?)";
+            PreparedStatement pstmt = con.prepareStatement(insertQuery);
+
+            // Insert 1st employee
+            pstmt.setString(1, "Roshan");
+            pstmt.setDouble(2, 55000.00);
+            pstmt.executeUpdate();
+
+            // Insert 2nd employee
+            pstmt.setString(1, "Ram");
+            pstmt.setDouble(2, 45000.00);
+            pstmt.executeUpdate();
+
+            // Insert 3rd employee
+            pstmt.setString(1, "Sham");
+            pstmt.setDouble(2, 60000.00);
+            pstmt.executeUpdate();
+
+            System.out.println("✅ Employees inserted successfully!\n");
+
+            // 4. Retrieve & display data
+            String selectQuery = "SELECT * FROM employee_new";
+            ResultSet rs = pstmt.executeQuery(selectQuery); // ❌ will cause error if used like this
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        }
+    }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+</head>
+<body>
+  <h2>Login</h2>
+  <!-- posts to LoginServlet mapped at /login -->
+  <form method="post" action="login">
+    <label>Username: <input type="text" name="username" required></label><br><br>
+    <label>Password: <input type="password" name="password" required></label><br><br>
+    <button type="submit">Login</button>
+  </form>
+
+  <!-- show simple error messages if passed as query params -->
+  <script>
+    const params = new URLSearchParams(location.search);
+    if (params.get('error')) {
+      document.write('<p style="color:red">Invalid credentials. Try admin/admin123</p>');
+    } else if (params.get('loginRequired')) {
+      document.write('<p style="color:orange">Please login first.</p>');
+    }
+  </script>
+</body>
+</html>

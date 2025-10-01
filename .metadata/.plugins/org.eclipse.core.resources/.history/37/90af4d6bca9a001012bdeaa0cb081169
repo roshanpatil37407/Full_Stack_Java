@@ -1,0 +1,61 @@
+package jdbc;
+
+import java.sql.*;
+import java.util.Scanner;
+
+public class CRUP_Operations {
+	  public static void main(String[] args) {
+	        Scanner sc = new Scanner(System.in);
+
+	        try {
+	            // 1. Load driver
+	            Class.forName("com.mysql.cj.jdbc.Driver");
+
+	            // 2. Connect to database
+	            Connection con = DriverManager.getConnection(
+	                    "jdbc:mysql://localhost:3306/Roshu", "root", "root");
+	            
+	            
+	            int choise;
+	            do {
+	            	System.out.println("INSERT");
+	            	System.out.println("UPDATE");
+	            	System.out.println("DELET");
+	            	System.out.println("FETCH");
+	            	System.out.println("CALL");
+	            	System.out.println("EXIT");
+	            	System.out.print("Enter choice: ");
+	            	choise=sc.nextInt();	
+	            	
+	            	switch(choise) {
+	            	case 1:
+	            		System.out.print("Enter Name: ");
+                        String name = sc.next();
+                        System.out.print("Enter Salary: ");
+                        double salary = sc.nextDouble();
+                        
+                        String sql="insert into emp values(?,?)";
+                        PreparedStatement  ps=con.prepareStatement(sql);
+                        ps.setString(1,name);
+                        ps.setDouble(2,salary);
+                        ps.executeUpdate();
+                        System.out.println("INSERT DATA SUCCESFULLY");
+                        break;
+                        
+                        
+	            	}
+	            	
+	            
+	            }while(choise !=6);
+	            
+	            
+	            
+	            
+	            
+	            
+	        }catch(Exception e) {
+	        	
+	        }
+	  }
+	  
+}

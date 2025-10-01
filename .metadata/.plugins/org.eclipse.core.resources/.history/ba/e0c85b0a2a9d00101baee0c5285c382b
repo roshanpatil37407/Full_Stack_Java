@@ -1,0 +1,28 @@
+package student;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
+
+@WebServlet("/studentLogin")   // URL pattern
+public class StudentLoginServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    public StudentLoginServlet() {}
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        // Get values from login form
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        
+        // Dummy Student Login Check
+        if("student1".equals(username) && "1234".equals(password)) {
+            response.getWriter().println("<h2>Welcome Student: " + username + "</h2>");
+        } else {
+            response.getWriter().println("<h2>Invalid Username or Password!</h2>");
+        }
+    }
+}

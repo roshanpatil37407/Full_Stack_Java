@@ -1,0 +1,44 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form action="">
+<input type="text" name="pal">
+<input type="buuton" name="submit">
+</form>
+
+<%
+int num = Integer.parseInt(request.getParameter("num"));
+ 
+if(ispall(num)){
+	out.print(num + "is palindrome ");
+	
+}
+else{
+	out.print(num + "is palindrome ");
+}
+
+%>
+<%!
+public boolean ispall(int num){
+	int rev=0;
+	for(int temp=num;temp!=0;temp=temp/10){
+		rev=(rev*10)+(temp %10);
+	}
+	if(rev==num){
+		return true;
+		
+	}else{
+		return false;
+	}
+}
+
+%>
+</body>
+</html>

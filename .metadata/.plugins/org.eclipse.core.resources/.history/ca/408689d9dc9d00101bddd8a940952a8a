@@ -1,0 +1,115 @@
+t
+
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.sql.*;
+
+@WebServlet("/register")
+public class RegistrationServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    // Change these to match your DB setup
+    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/servlet_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+    private static final String DB_USER = "servlet_user";
+    private static final String DB_PASS = "servlet_pass";
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        resp.setContentType("text/html;charset=UTF-8");
+
+        // simple session check
+        HttpSession s = req.getSession(false);
+        if (s == null || s.getAttribute("user") == null) {
+            resp.getWriter().println("Please login first.");
+            return;
+        }
+
+        String firstName = req.getParameter("firstName");
+        String lastName  = req.getParameter("lastName");
+        String email     = req.getParameter("email");
+        String username  = req.getParameter("username");
+        String password  = req.getParameter("password");
+        String gender    = req.getParameter("gender");
+        String country   = req.getParameter("country");
+
+        // basic validation
+        if (firstName == null || email == null || username == null || password == null ||
+                firstName.isEmpty() || email.isEmpty() || username.isEmpty() || password.isEmpty()) {
+            resp.getWriter().println("Missing required fields. Please fill all mandatory fields.");
+            return;
+        }
+
+        // OPTIONAL: hash the password (SHA-256 shown for simplicity; bcrypt is recommended in production)
+        String hashedPassword;
+        try {
+            hashedPassword = sha256(password);
+        } catch (NoSuchAlgorithmException e) {
+            hashedPassword = password; // fallback (not ideal)
+        }
+
+        // JDBC insert
+        try {
+            // ensure driver present - since JDBC 4 it auto loads, but explicitly:
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            resp.getWriter().println("JDBC Driver not found: " + e.getMessage());
+            return;
+        }
+
+        String checkSql = "SELECT id FROM registrations WHERE username = ?";
+        String insertSql = "INSERT INTO registrations (first_name, last_name, email, username, password, gender, country) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+        try (Connection conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS)) {
+            // check username uniqueness
+            try (PreparedStatement pst = conn.prepareStatement(checkSql)) {
+                pst.setString(1, username);
+                try (ResultSet rs = pst.executeQuery()) {
+                    if (rs.next()) {
+                        resp.getWriter().println("Username already exists. Choose another username.");
+                        return;
+                    }
+                }
+            }
+
+            try (PreparedStatement pst = conn.prepareStatement(insertSql)) {
+                pst.setString(1, firstName);
+                pst.setString(2, lastName);
+                pst.setString(3, email);
+                pst.setString(4, username);
+                pst.setString(5, hashedPassword);
+                pst.setString(6, gender);
+                pst.setString(7, country);
+
+                int affected = pst.executeUpdate();
+                if (affected > 0) {
+                    resp.getWriter().println("<p>Registration successful!</p>");
+                    resp.getWriter().println("<p><a href='" + req.getContextPath() + "/registerForm'>Register another</a></p>");
+                } else {
+                    resp.getWriter().println("<p>Registration failed. Try again.</p>");
+                }
+            }
+
+        } catch (SQLException e) {
+            // In production: log error and show friendly error message
+            resp.getWriter().println("<p>Database error: " + e.getMessage() + "</p>");
+        }
+    }
+
+    // simple SHA-256 hashing (for demo only). Prefer bcrypt (jBCrypt) for passwords in production.
+    private static String sha256(String input) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+        byte[] hashed = md.digest(input.getBytes(StandardCharsets.UTF_8));
+        StringBuilder sb = new StringBuilder();
+        for (byte b : hashed) {
+            sb.append(String.format("%02x", b));
+        }
+        return sb.toString();
+    }
+}

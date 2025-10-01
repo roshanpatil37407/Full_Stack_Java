@@ -1,0 +1,40 @@
+package jdbc;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+public class InsertData {
+
+    public static void main(String[] args) {
+        try {
+            // Load driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Connect to database
+            Connection con = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/demo", "root", "root");
+
+            // Insert query (exclude id, since it's auto_increment)
+            String query = "INSERT INTO emp () VALUES (?, ?, ?)";
+
+            PreparedStatement pstmt = con.prepareStatement(query);
+
+            // Set values
+            pstmt.setString(1, "Roshan");
+            pstmt.setDouble(2, 55000.00);
+            pstmt.setString(3, "IT");
+
+            // Execute update
+            int rowsInserted = pstmt.executeUpdate();
+
+            if (rowsInserted > 0) {
+                System.out.println("✅ A new employee was inserted successfully!");
+            }
+
+            // Close connection
+            con.close();
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        }
+    }
+}

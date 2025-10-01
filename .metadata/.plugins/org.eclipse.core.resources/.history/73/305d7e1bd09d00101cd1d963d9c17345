@@ -1,0 +1,42 @@
+package may_web;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import may_2.Student;
+import may_2.StudentDoa;
+
+@WebServlet("/Register")  
+public class Register extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        response.setContentType("text/html");
+        PrintWriter pw = response.getWriter();
+
+        String fullname = request.getParameter("fullname");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        String course = request.getParameter("course");
+
+        Student st = new Student(fullname, email, password, course);
+
+        int status = StudentDoa.insertStud(st); 
+
+        if(status > 0) {
+            pw.println("<h2 style='color:green;'>Registration Successful!</h2>");
+            pw.println("<p><b>Name:</b> " + fullname + "</p>");
+            pw.println("<p><b>Email:</b> " + email + "</p>");
+            pw.println("<p><b>Course:</b> " + course + "</p>");
+        } else {
+            pw.println("<h2 style='color:red;'>Registration Failed!</h2>");
+        }
+    }
+}

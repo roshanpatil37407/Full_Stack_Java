@@ -1,0 +1,89 @@
+package jdbc;
+
+import java.sql.*;
+import java.util.Scanner;
+
+public class EmployeeCRUD {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in);
+             Connection con = DriverManager.getConnection(
+                     "jdbc:mysql://localhost:3306/Roshu", "root", "root")) {
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            int choice;
+
+            do {
+                System.out.println("\n===== Employee Menu =====");
+                System.out.println("1. Insert  2. Update  3. Delete  4. Display  5. Call Proc  6. Exit");
+                System.out.print("Enter choice: ");
+                choice = sc.nextInt();
+
+                switch (choice) {
+                    case 1: // INSERT
+                        System.out.print("Enter Name: ");
+                        String name = sc.next();
+                        System.out.print("Enter Salary: ");
+                        double salary = sc.nextDouble();
+                        try (PreparedStatement ps = con.prepareStatement(
+                                "INSERT INTO employee_new (name, salary) VALUES (?, ?)")) {
+                            ps.setString(1, name);
+                            ps.setDouble(2, salary);
+                            ps.executeUpdate();
+                            System.out.println("✅ Inserted!");
+                        }
+                        break;
+
+                    case 2: // UPDATE
+                        System.out.print("Enter ID: ");
+                        int uid = sc.nextInt();
+                        System.out.print("Enter New Salary: ");
+                        double ns = sc.nextDouble();
+                        try (PreparedStatement ps = con.prepareStatement(
+                                "UPDATE employee_new SET salary=? WHERE id=?")) {
+                            ps.setDouble(1, ns);
+                            ps.setInt(2, uid);
+                            System.out.println(ps.executeUpdate() > 0 ? "✅ Updated!" : "❌ Not Found!");
+                        }
+                        break;
+
+                    case 3: // DELETE
+                        System.out.print("Enter ID: ");
+                        int did = sc.nextInt();
+                        try (PreparedStatement ps = con.prepareStatement(
+                                "DELETE FROM employee_new WHERE id=?")) {
+                            ps.setInt(1, did);
+                            System.out.println(ps.executeUpdate() > 0 ? "✅ Deleted!" : "❌ Not Found!");
+                        }
+                        break;
+
+                    case 4: // DISPLAY
+                        try (ResultSet rs = con.createStatement().executeQuery("SELECT * FROM employee_new")) {
+                            System.out.println("\nID | Name | Salary");
+                            while (rs.next())
+                                System.out.println(rs.getInt(1) + " | " + rs.getString(2) + " | " + rs.getDouble(3));
+                        }
+                        break;
+
+                    case 5: // CALL PROCEDURE
+                        try (CallableStatement cs = con.prepareCall("CALL salary()");
+                             ResultSet rs = cs.executeQuery()) {
+                            System.out.println("\n[Procedure Result]");
+                            while (rs.next())
+                                System.out.println(rs.getInt(1) + " | " + rs.getString(2) + " | " + rs.getDouble(3));
+                        }
+                        break;
+
+                    case 6:
+                        System.out.println("👋 Exiting...");
+                        break;
+
+                    default:
+                        System.out.println("❌ Invalid Choice!");
+                }
+            } while (choice != 6);
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        }
+    }
+}

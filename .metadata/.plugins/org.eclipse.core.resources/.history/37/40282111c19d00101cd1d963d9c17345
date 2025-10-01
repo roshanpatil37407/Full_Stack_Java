@@ -1,0 +1,33 @@
+package may_web;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/Register")  // URL mapping
+public class Register extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        response.setContentType("text/html");
+        PrintWriter pw = response.getWriter();
+
+        // Get form data
+        String fullname = request.getParameter("fullname");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        String course = request.getParameter("course");
+
+        // Display registration details
+        pw.println("<h2>Registration Successful!</h2>");
+        pw.println("<p><b>Name:</b> " + fullname + "</p>");
+        pw.println("<p><b>Email:</b> " + email + "</p>");
+        pw.println("<p><b>Course:</b> " + course + "</p>");
+    }
+}

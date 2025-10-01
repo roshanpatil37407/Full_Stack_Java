@@ -1,0 +1,47 @@
+package may_web;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+import may_2.StudentDao;
+import servlet_student.Student;
+
+
+
+@WebServlet("/Register")
+public class Register extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        response.setContentType("text/html");
+        PrintWriter pw = response.getWriter();
+
+        String fullname = request.getParameter("fullname");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        String course = request.getParameter("course");
+
+        Student st = new Student(fullname, email, password, course);
+        int status = StudentDao.insertStud(st);
+
+        if (status > 0){
+            pw.println("<h2 style='color:green;'>Registration Successful!</h2>");
+            pw.println("<p><b>Name:</b> " + fullname + "</p>");
+            pw.println("<p><b>Email:</b> " + email + "</p>");
+            pw.println("<p><b>Course:</b> " + course + "</p>");
+            pw.println("<a href='loging.html'>Go to Login</a>");
+        } else {
+            pw.println("<h2 style='color:red;'>Registration Failed! (Email may already exist)</h2>");
+            pw.println("<a href='register.html'>Try Again</a>");
+        }
+    }
+}

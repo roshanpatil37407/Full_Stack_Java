@@ -1,0 +1,38 @@
+package mypack;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/Login")
+public class LoginServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException {
+        
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+
+        if ("admin".equals(username) && "admin".equals(password)) {
+            // Successful login
+            out.println("<script type=\"text/javascript\">");
+            out.println("alert('Login Successful');");
+            out.println("location='welcome.html';"); // redirect to welcome page
+            out.println("</script>");
+        } else {
+            // Failed login
+            out.println("<script type=\"text/javascript\">");
+            out.println("alert('Invalid Credentials');");
+            out.println("location='login.html';"); // back to login page
+            out.println("</script>");
+        }
+    }
+}

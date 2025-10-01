@@ -1,0 +1,42 @@
+package jdbc;
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+
+public class Calls {
+    public static void main(String[] args) {
+        try {
+            
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            
+            Connection con = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/Roshu", "root", "root");
+
+         
+            String sql = "CALL salary()";
+            CallableStatement cs = con.prepareCall(sql);
+
+            ResultSet rs = cs.executeQuery();
+
+           
+            System.out.println("ID | Name | Salary");
+//            System.out.println("---------------------");
+
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                double salary = rs.getDouble("salary");
+
+                System.out.println(id + " | " + name + " | " + salary);
+//                System.out.println(rs.getInt(0));
+            }
+
+            con.close();
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        }
+    }
+}

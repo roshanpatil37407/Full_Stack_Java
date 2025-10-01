@@ -1,0 +1,121 @@
+package jdbc;
+
+import java.sql.*;
+import java.util.Scanner;
+
+public class EmployeeCRUD {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        try {
+          
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            Connection con = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/Roshu", "root", "root");
+
+            int choice;
+            do {
+             
+                System.out.println("1. Insert Employee");
+                System.out.println("2. Update Employee Salary");
+                System.out.println("3. Delete Employee");
+                System.out.println("4. Display All Employees");
+                System.out.println("5. Call Stored Procedure (salary)");
+                System.out.println("6. Exit");
+                System.out.print("Enter choice: ");
+                choice = sc.nextInt();
+
+                switch (choice) {
+                    case 1: // INSERT
+                        System.out.print("Enter Name: ");
+                        String name = sc.next();
+                        System.out.print("Enter Salary: ");
+                        double salary = sc.nextDouble();
+
+                        String insertQuery = "INSERT INTO employee_new (name, salary) VALUES (?, ?)";
+                        PreparedStatement psInsert = con.prepareStatement(insertQuery);
+                        psInsert.setString(1, name);
+                        psInsert.setDouble(2, salary);
+                        psInsert.executeUpdate();
+                        System.out.println("✅ Employee Inserted Successfully!");
+                        break;
+
+                    case 2: // UPDATE
+                        System.out.print("Enter Employee ID to Update: ");
+                        int upId = sc.nextInt();
+                        System.out.print("Enter New Salary: ");
+                        double newSalary = sc.nextDouble();
+
+                        String updateQuery = "UPDATE employee_new SET salary = ? WHERE id = ?";
+                        PreparedStatement psUpdate = con.prepareStatement(updateQuery);
+                        psUpdate.setDouble(1, newSalary);
+                        psUpdate.setInt(2, upId);
+                        int updated = psUpdate.executeUpdate();
+                        if (updated > 0)
+                            System.out.println("✅ Salary Updated Successfully!");
+                        else
+                            System.out.println("❌ Employee Not Found!");
+                        break;
+
+                    case 3: // DELETE
+                        System.out.print("Enter Employee ID to Delete: ");
+                        int delId = sc.nextInt();
+
+                        String deleteQuery = "DELETE FROM employee_new WHERE id = ?";
+                        PreparedStatement psDelete = con.prepareStatement(deleteQuery);
+                        psDelete.setInt(1, delId);
+                        int deleted = psDelete.executeUpdate();
+                        if (deleted > 0)
+                            System.out.println("✅ Employee Deleted Successfully!");
+                        else
+                            System.out.println("❌ Employee Not Found!");
+                        break;
+
+                    case 4: // DISPLAY
+                        String selectQuery = "SELECT * FROM employee_new";
+                        Statement stmt = con.createStatement();
+                        ResultSet rs = stmt.executeQuery(selectQuery);
+
+                        System.out.println("\nID | Name | Salary");
+                        System.out.println("--------------------");
+                        while (rs.next()) {
+                            System.out.println(
+                                    rs.getInt("id") + " | " +
+                                    rs.getString("name") + " | " +
+                                    rs.getDouble("salary"));
+                        }
+                        break;
+
+                    case 5: // CALL PROCEDURE
+                        String sql = "CALL salary()";
+                        CallableStatement cs = con.prepareCall(sql);
+                        ResultSet rs2 = cs.executeQuery();
+
+                        System.out.println("\n[Stored Procedure Result]");
+                        System.out.println("ID | Name | Salary");
+                        System.out.println("--------------------");
+                        while (rs2.next()) {
+                            System.out.println(
+                                    rs2.getInt("id") + " | " +
+                                    rs2.getString("name") + " | " +
+                                    rs2.getDouble("salary"));
+                        }
+                        break;
+
+                    case 6:
+                        System.out.println("👋 Exiting Program...");
+                        break;
+
+                    default:
+                        System.out.println("❌ Invalid Choice! Try Again.");
+                }
+            } while (choice != 6);
+
+            con.close();
+            sc.close();
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        }
+    }
+}

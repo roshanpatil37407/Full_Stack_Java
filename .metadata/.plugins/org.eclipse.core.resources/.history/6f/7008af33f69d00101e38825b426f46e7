@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="sumitForm">
+ Name:<input type="text" name="n">
+ Email:<input type="email" name="e">
+</form>
+</body>
+</html>

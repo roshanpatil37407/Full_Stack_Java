@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;loging.servlet&apos; to &apos;Loging&apos;&#x0D;&#x0A;- Original project: &apos;Roshans&apos;&#x0D;&#x0A;- Original element: &apos;loging.servlet&apos;&#x0D;&#x0A;- Renamed element: &apos;loging.Loging&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;servlet&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;loging{servlet.java[servlet" matchStrategy="1" name="Loging" qualified="false" references="true" similarDeclarations="false" stamp="1759144155467" textual="false" version="1.0"/>
+</session>
