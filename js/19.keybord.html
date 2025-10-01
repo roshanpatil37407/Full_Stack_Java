@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyboard Events Demo</title>
+    <style>
+      input {
+        padding: 8px;
+        width: 300px;
+        margin-top: 10px;
+      }
+      #output {
+        margin-top: 15px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        min-height: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Keyboard Events Demo</h1>
+
+    <input type="text" id="textInput" placeholder="Type something..." />
+    <div id="output">Event output will appear here.</div>
+
+    <script>
+      const input = document.getElementById("textInput");
+      const output = document.getElementById("output");
+
+      // Keydown
+      input.addEventListener("keydown", (e) => {
+        output.innerText = `Key down: ${e.key} (code: ${e.code})`;
+      });
+
+      // Keyup
+      input.addEventListener("keyup", (e) => {
+        output.innerText = `Key up: ${e.key} (code: ${e.code})`;
+      });
+
+      // Input event
+      input.addEventListener("input", () => {
+        output.innerText = `Current input value: ${input.value}`;
+      });
+
+      // Focus and blur
+      input.addEventListener("focus", () => {
+        output.innerText = "Input field focused!";
+      });
+
+      input.addEventListener("blur", () => {
+        output.innerText = "Input field lost focus!";
+      });
+    </script>
+  </body>
+</html>

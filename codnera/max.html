@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Example</title>
+</head>
+<body>
+    <script>
+       
+        const arr = [1, 2, 6, 5, 7];
+        for (let i = 0; i < arr.length; i++) {
+            document.writeln("<br>" + arr[i]);
+        }
+        document.writeln("<br> -----------");
+
+
+        const ar = new Array("helo", "bye", "good");
+        for (let i = 0; i < ar.length; i++) {
+            document.writeln("<br>" + ar[i]);
+        }
+        document.writeln("<br> -----------");
+
+        ar.push("last");
+        ar[7] = "cycle";
+        for (let i = 0; i < ar.length; i++) {
+            document.writeln("<br>" + ar[i]);
+        }
+        document.writeln("<br> -----------");
+
+    
+        let person = {name: "Roshan Patil", age: "22", weight: "50"};
+        document.writeln("<br>" + person.name);
+        document.writeln("<br>" + person.age);
+        document.writeln("<br>" + person.weight);
+    </script>
+</body>
+</html>

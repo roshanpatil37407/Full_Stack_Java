@@ -1,0 +1,199 @@
+1. Foundations (HTML basics)
+
+What to learn
+
+HTML5 document structure (<!doctype html>, <html>, <head>, <body>).
+
+Basic tags: headings (h1–h6), paragraphs (p), links (a), images (img), lists (ul, ol, li), line breaks and horizontal rules.
+
+Block vs inline elements.
+
+Attributes (e.g., href, src, alt, title, id, class).
+
+HTML comments.
+
+Basic forms: <form>, <input>, <label>, <button>, <textarea>, <select>.
+
+Simple tables: <table>, <tr>, <td>, <th>.
+
+HTML validation (W3C validator).
+
+Tiny practice
+
+Build a simple personal profile page: heading, image with alt, short bio, list of skills, and contact form.
+
+Starter HTML skeleton (use this every time)
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Page title</title>
+</head>
+<body>
+  <!-- your content -->
+</body>
+</html>
+
+2. Intermediate HTML (structure, semantics & accessibility)
+
+What to learn
+
+Semantic HTML: <header>, <nav>, <main>, <section>, <article>, <aside>, <footer>.
+
+Accessible forms: <label for>, fieldset/legend, input aria-* basics.
+
+Images & media: responsive images (srcset, sizes), <picture>, <figure>/<figcaption>, <audio>, <video>.
+
+Iframes and embed (iframe, <embed>) – when to use and security concerns.
+
+Microformats and metadata: <meta> tags (charset, viewport, description), Open Graph basics for social sharing.
+
+Basic SEO-friendly HTML (semantic headings, meta description, structured content).
+
+Intro to ARIA roles (when and why).
+
+Progressive enhancement mindset (content first).
+
+Tiny practice
+
+Convert your profile page into a semantic page with <main>/<section> and add accessible labels for the form.
+
+Make an image responsive using srcset.
+
+3. Layout & Responsive design (HTML + CSS tie-in)
+
+What to learn
+
+Mobile-first markup (meta viewport, content order).
+
+Basic responsive building blocks: use semantic containers that CSS will style (no layout via tables).
+
+Basic introduction to CSS Flexbox and Grid (you’ll apply CSS, but structure HTML accordingly).
+
+Accessible navigation markup (skip links, accessible nav).
+
+Responsive images and lazy loading loading="lazy".
+
+Tiny practice
+
+Build a responsive two-column layout (header + nav + content + footer) using semantic HTML ready for CSS.
+
+4. Advanced HTML features & modern patterns
+
+What to learn
+
+HTML Templates: <template> and <slot> (useful with Web Components).
+
+Web Components basics (custom elements, shadow DOM) — HTML integration points (requires JS but impacts HTML structure).
+
+Client storage hooks (how HTML uses localStorage/sessionStorage via JS).
+
+Data attributes (data-*) for attaching structured data to DOM elements.
+
+Content security basics: why rel="noopener" on external links, sandbox on iframes.
+
+Internationalization: lang attribute, dir (rtl) handling.
+
+Structured data: JSON-LD embedded in <script type="application/ld+json"> for SEO.
+
+Accessibility deep-dive: ARIA patterns, keyboard navigation, focus management.
+
+Progressive Web App basics (HTML manifest linking, how HTML integrates with service workers—service workers are JS but you link manifest and meta in HTML).
+
+Tiny practice
+
+Add structured data (JSON-LD) to your page for a person or organization.
+
+Create an HTML template <template> and programmatically clone it with JS.
+
+5. Performance, security & SEO (HTML perspective)
+
+What to learn
+
+Critical rendering path: place important content early in markup.
+
+Use rel="preload"/preconnect for important resources (markup placement matters).
+
+Lazy load images (loading="lazy") and media.
+
+Minimize DOM size and unnecessary wrappers.
+
+Basic HTML-secure patterns (avoid inline scripts/styles if CSP required, use rel="noopener noreferrer").
+
+Semantic markup for better SEO and accessibility.
+
+Tiny practice
+
+Audit your page with browser devtools / Lighthouse and fix top 3 HTML-related issues (semantic headings, missing alt attributes, meta description).
+
+6. Projects (apply and show skills)
+
+Beginner projects
+
+Single-page résumé / portfolio (semantic, forms, images with alt).
+
+Simple landing page clone (static).
+
+Intermediate projects
+
+Responsive multi-section site with navigation, form handling (front-end validation), embedded video.
+
+Blog layout with accessible article structure and author metadata.
+
+Advanced projects
+
+Small Web Component (custom element) for a reusable UI card.
+
+Convert a site into a PWA: add web app manifest link and make offline-ready (service worker code is JS but HTML must include manifest and correct meta).
+
+Add structured data for articles/products and verify in Google Rich Results test.
+
+7. Tools & ecosystem (what to learn alongside HTML)
+
+Browser devtools (Elements, Accessibility, Network, Lighthouse).
+
+Version control: Git & GitHub (host your pages with GitHub Pages).
+
+Text editors: VS Code + useful extensions (Emmet, HTMLHint).
+
+Validators & linters: W3C validator, HTMLHint.
+
+Build basics: how bundlers/frameworks affect HTML (Vite, Webpack) — helpful to know what gets injected into HTML templates.
+
+Deployment: static hosting (Netlify, Vercel, GitHub Pages).
+
+8. Practice checklist (quick)
+
+ Always use a valid HTML5 skeleton.
+
+ Use semantic tags for meaningful sections.
+
+ Add alt for every image and captions where needed.
+
+ Make forms accessible (labels, fieldset/legend).
+
+ Mobile-first structure (viewport meta + logical source order).
+
+ Validate HTML with W3C.
+
+ Add minimal meta tags (charset, viewport, description).
+
+ Add structured data (JSON-LD) where applicable.
+
+ Test keyboard navigation and screen-reader basics.
+
+9. Common pitfalls & tips
+
+Don’t use <div>s for everything — prefer semantic elements.
+
+Don’t rely on images alone to convey information (use alt + text).
+
+Avoid inline styles/scripts — they hurt caching and CSP.
+
+Use label correctly — clicking the label should focus the field.
+
+Use rel="noopener noreferrer" for target="_blank" links.
+
+Test on mobile and with a screen reader if possible.

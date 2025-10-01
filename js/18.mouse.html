@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse Events Demo</title>
+    <style>
+      #box {
+        width: 150px;
+        height: 150px;
+        background-color: lightblue;
+        margin-top: 20px;
+        line-height: 150px;
+        text-align: center;
+        font-weight: bold;
+        border: 2px solid #333;
+      }
+      #output {
+        margin-top: 15px;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mouse Events Demo</h1>
+
+    <div id="box">Hover or Click me</div>
+    <div id="output">Event output will appear here.</div>
+
+    <script>
+      const box = document.getElementById("box");
+      const output = document.getElementById("output");
+
+      box.addEventListener("mouseover", () => {
+        box.style.backgroundColor = "orange";
+        output.innerText = "Mouse is over the box!";
+      });
+
+      box.addEventListener("mouseout", () => {
+        box.style.backgroundColor = "lightblue";
+        output.innerText = "Mouse left the box.";
+      });
+
+      box.addEventListener("mousedown", () => {
+        box.style.border = "3px dashed red";
+        output.innerText = "Mouse button pressed!";
+      });
+
+      box.addEventListener("mouseup", () => {
+        box.style.border = "2px solid #333";
+        output.innerText = "Mouse button released!";
+      });
+
+      box.addEventListener("mousemove", (e) => {
+        output.innerText = `Mouse moving inside box at (${e.offsetX}, ${e.offsetY})`;
+      });
+    </script>
+  </body>
+</html>

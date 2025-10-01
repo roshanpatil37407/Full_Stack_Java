@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Image Types with Valid Source</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f8ff;
+      text-align: center;
+      margin: 20px;
+    }
+    h2 {
+      color: darkblue;
+      margin-top: 40px;
+    }
+    figure {
+      margin: 20px auto;
+    }
+    .bg-img {
+      width: 500px;
+      height: 300px;
+      margin: 20px auto;
+      border: 2px solid #444;
+      background-image: url('https://th.bing.com/th/id/OIP.vA1AyyXVZGakpvyE2s8c6AHaEo?w=177&h=150&c=6&o=7&dpr=1.3&pid=1.7&rm=3');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌅 Image Examples (All Using the Same Valid URL)</h1>
+
+  <!-- 1. Basic <img> Tag -->
+  <h2>1. Basic &lt;img&gt; Tag</h2>
+  <img src="https://th.bing.com/th/id/OIP.vA1AyyXVZGakpvyE2s8c6AHaEo?w=177&amp;h=150&amp;c=6&amp;o=7&amp;dpr=1.3&amp;pid=1.7&amp;rm=3"
+       alt="Sunset Example" width="500" height="300">
+
+  <!-- 2. Image with Title (Tooltip) -->
+  <h2>2. Image with Title (Tooltip)</h2>
+  <img src="https://th.bing.com/th/id/OIP.vA1AyyXVZGakpvyE2s8c6AHaEo?w=177&amp;h=150&amp;c=6&amp;o=7&amp;dpr=1.3&amp;pid=1.7&amp;rm=3"
+       alt="Sunset Example" title="Sunset with Tooltip" width="500">
+
+  <!-- 3. Image Inside a Link -->
+  <h2>3. Clickable Image</h2>
+  <a href="https://www.google.com" target="_blank">
+    <img src="https://th.bing.com/th/id/OIP.vA1AyyXVZGakpvyE2s8c6AHaEo?w=177&amp;h=150&amp;c=6&amp;o=7&amp;dpr=1.3&amp;pid=1.7&amp;rm=3"
+         alt="Clickable Sunset" width="500">
+  </a>
+
+  <!-- 4. Figure with Figcaption -->
+  <h2>4. Figure with Caption</h2>
+  <figure>
+    <img src="https://th.bing.com/th/id/OIP.vA1AyyXVZGakpvyE2s8c6AHaEo?w=177&amp;h=150&amp;c=6&amp;o=7&amp;dpr=1.3&amp;pid=1.7&amp;rm=3"
+         alt="Sunset over landscape" width="500">
+    <figcaption>Sunset over the landscape</figcaption>
+  </figure>
+
+  <!-- 5. Responsive Image with srcset -->
+  <h2>5. Responsive Image with srcset</h2>
+  <img src="https://th.bing.com/th/id/OIP.vA1AyyXVZGakpvyE2s8c6AHaEo?w=177&h=150&c=6&o=7&dpr=1.3&pid=1.7&rm=3"
+       srcset="https://th.bing.com/th/id/OIP.vA1AyyXVZGakpvyE2s8c6AHaEo?w=177&h=150&c=6&o=7&dpr=1.3&pid=1.7&rm=3 640w,
+               https://th.bing.com/th/id/OIP.vA1AyyXVZGakpvyE2s8c6AHaEo?w=177&h=150&c=6&o=7&dpr=1.3&pid=1.7&rm=3 1280w"
+       sizes="(max-width: 600px) 100vw, 600px"
+       alt="Responsive Sunset" width="500">
+
+  <!-- 6. Picture Tag (Device-Based Images) -->
+  <h2>6. Picture Tag</h2>
+  <picture>
+    <source media="(max-width: 600px)" srcset="https://th.bing.com/th/id/OIP.vA1AyyXVZGakpvyE2s8c6AHaEo?w=177&h=150&c=6&o=7&dpr=1.3&pid=1.7&rm=3">
+    <source media="(min-width: 601px)" srcset="https://th.bing.com/th/id/OIP.vA1AyyXVZGakpvyE2s8c6AHaEo?w=177&h=150&c=6&o=7&dpr=1.3&pid=1.7&rm=3">
+    <img src="https://th.bing.com/th/id/OIP.vA1AyyXVZGakpvyE2s8c6AHaEo?w=177&h=150&c=6&o=7&dpr=1.3&pid=1.7&rm=3"
+         alt="Sunset Picture" width="500">
+  </picture>
+
+  <!-- 7. CSS Background Image -->
+  <h2>7. Background Image (CSS)</h2>
+  <div class="bg-img"></div>
+
+</body>
+</html>

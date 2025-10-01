@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Playlist</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .video-container {
+      display: flex;          /* Arrange in a row */
+      justify-content: center; /* Center the row */
+      gap: 20px;              /* Space between videos */
+    }
+    .video-box {
+      text-align: center;     /* Center the "Watch Full" link */
+    }
+    video {
+      border: 2px solid #444;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center;">My Video Playlist</h2>
+
+  <div class="video-container">
+    <div class="video-box">
+      <video width="200" controls>
+        <source src="/bappa.mp4" type="video/mp4">
+      </video><br>
+      <a href="video.html">Watch Full</a>
+    </div>
+
+    <div class="video-box">
+      <video width="200" controls>
+        <source src="/bappa2.mp4" type="video/mp4">
+      </video><br>
+      <a href="video2.html">Watch Full</a>
+    </div>
+
+    <div class="video-box">
+      <video width="200" controls>
+        <source src="/bappa.mp4" type="video/mp4">
+      </video><br>
+      <a href="video3.html">Watch Full</a>
+    </div>
+  </div>
+</body>
+</html>

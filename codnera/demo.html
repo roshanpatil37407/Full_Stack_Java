@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All HTML Tags Example</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        section { margin-bottom: 30px; }
+        h1, h2, h3, h4, h5, h6 { color: #2c3e50; }
+        table, th, td { border: 1px solid #333; border-collapse: collapse; padding: 5px; }
+        ul, ol { margin-left: 20px; }
+        a { color: #2980b9; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        code { background: #f4f4f4; padding: 2px 4px; border-radius: 3px; }
+        .box { border: 1px solid #ccc; padding: 10px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML All Tags Example</h1>
+        <nav>
+            <a href="#text">Text</a> |
+            <a href="#lists">Lists</a> |
+            <a href="#media">Media</a> |
+            <a href="#forms">Forms</a> |
+            <a href="#table">Table</a>
+        </nav>
+    </header>
+
+    <section id="text">
+        <h2>Text Tags</h2>
+        <p>This is a <strong>paragraph</strong> with <em>emphasis</em> and <mark>highlight</mark>.</p>
+        <blockquote>This is a blockquote.</blockquote>
+        <pre>Preformatted
+text</pre>
+        <code>&lt;div&gt;Sample code&lt;/div&gt;</code>
+        <br>
+        <small>Small text</small>
+        <hr>
+        <abbr title="HyperText Markup Language">HTML</abbr>
+        <address>123 Main St, City</address>
+        <b>Bold</b>, <i>Italic</i>, <u>Underline</u>, <s>Strikethrough</s>
+        <sub>Subscript</sub>, <sup>Superscript</sup>
+        <time datetime="2024-06-01">June 1, 2024</time>
+    </section>
+
+    <section id="lists">
+        <h2>Lists</h2>
+        <ul>
+            <li>Unordered list item</li>
+            <li>Another item</li>
+        </ul>
+        <ol>
+            <li>Ordered list item</li>
+            <li>Another item</li>
+        </ol>
+        <dl>
+            <dt>Definition Term</dt>
+            <dd>Definition Description</dd>
+        </dl>
+    </section>
+
+    <section id="media">
+        <h2>Media</h2>
+        <img src="https://via.placeholder.com/100" alt="Placeholder Image">
+        <audio controls>
+            <source src="audio.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <video width="200" controls>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <figure>
+            <img src="https://via.placeholder.com/80" alt="Figure Image">
+            <figcaption>Figure caption</figcaption>
+        </figure>
+    </section>
+
+    <section id="forms">
+        <h2>Forms</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br>
+            <input type="checkbox" id="check1" name="check1">
+            <label for="check1">Check me</label><br>
+            <input type="radio" id="radio1" name="radio" value="1">
+            <label for="radio1">Radio 1</label>
+            <input type="radio" id="radio2" name="radio" value="2">
+            <label for="radio2">Radio 2</label><br>
+            <select>
+                <option>Option 1</option>
+                <option>Option 2</option>
+            </select><br>
+            <textarea rows="2" cols="20">Textarea</textarea><br>
+            <button type="submit">Submit</button>
+        </form>
+        <fieldset>
+            <legend>Fieldset Example</legend>
+            <input type="color">
+            <input type="date">
+            <input type="range">
+        </fieldset>
+    </section>
+
+    <section id="table">
+        <h2>Table</h2>
+        <table>
+            <caption>Sample Table</caption>
+            <thead>
+                <tr>
+                    <th>Header 1</th>
+                    <th>Header 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Cell 1</td>
+                    <td>Cell 2</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">Footer</td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+
+    <section>
+        <h2>Other Tags</h2>
+        <details>
+            <summary>Details Tag</summary>
+            More information here.
+        </details>
+        <progress value="70" max="100"></progress>
+        <meter value="0.6">60%</meter>
+        <div class="box">Div container</div>
+        <span>Span inline</span>
+        <main>Main content</main>
+        <aside>Aside content</aside>
+        <footer>Footer section</footer>
+        <nav>Navigation</nav>
+        <article>Article content</article>
+        <section>Section content</section>
+    </section>
+
+
+
+<button onclick="toggleMode()">Dark Mode</button>
+<body id="page">
+<script>
+function toggleMode() {
+  document.getElementById("page").classList.toggle("dark");
+}
+</script>
+<style>
+.dark { background:black; color:white; }
+</style>
+
+
+</body>
+</html>

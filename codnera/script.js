@@ -1,0 +1,18 @@
+ let a = 10;
+    let b = 20;
+    console.log("a = " + a + ", b = " + b);
+    console.log("== : " + (a == b));     
+    console.log("=== : " + (a === b));   
+    console.log("!= : " + (a != b));     
+    console.log("!== : " + (a !== b));   
+    console.log("< : " + (a < b));       
+    console.log("> : " + (a > b));      
+    console.log("<= : " + (a <= b));     
+    console.log(">= : " + (a >= b));     
+    console.log("----------------------------");
+    let x = 10;
+    let y = 5;
+    console.log("x = " + x + ", y = " + y);
+    console.log("Check for && : " + (a == x && b > y));   
+    console.log("Check for || : " + (a == x || b == y));  
+    console.log("Check for !  : " + !(a == x || b == y)); 

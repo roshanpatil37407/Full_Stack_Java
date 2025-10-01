@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Selectors Example</title>
+  <style>
+    /* 1. Element Selector */
+    h1 {
+      color: blue;
+    }
+
+    /* 2. ID Selector */
+    #unique {
+      color: green;
+      font-size: 24px;
+    }
+
+    /* 3. Class Selector */
+    .highlight {
+      background-color: yellow;
+      font-weight: bold;
+    }
+
+    /* 4. Universal Selector */
+    * {
+      font-family: Arial, sans-serif;
+    }
+
+    /* 5. Grouping Selector */
+    h2, p {
+      color: brown;
+    }
+
+    /* 6. Descendant Selector */
+    div p {
+      color: purple;
+    }
+
+    /* 7. Child Selector (>) */
+    div > span {
+      color: red;
+    }
+
+    /* 8. Adjacent Sibling Selector (+) */
+    h2 + p {
+      background-color: lightblue;
+    }
+
+    /* 9. General Sibling Selector (~) */
+    h3 ~ p {
+      border: 1px dashed gray;
+    }
+
+    /* 10. Attribute Selector */
+    a[target="_blank"] {
+      color: orange;
+      text-decoration: none;
+    }
+
+    /* 11. Pseudo-class Selector (:hover, :first-child, :nth-child) */
+    a:hover {
+      color: red;
+    }
+
+    ul li:first-child {
+      font-weight: bold;
+    }
+
+    ul li:nth-child(2) {
+      color: darkgreen;
+    }
+  </style>
+</head>
+<body>
+  <h1>1. Element Selector (All h1 are blue)</h1>
+
+  <h2 id="unique">2. ID Selector (This h2 is green)</h2>
+
+  <p class="highlight">3. Class Selector (Highlighted text)</p>
+
+  <h2>5. Grouping Selector (h2 & p are brown)</h2>
+  <p>This is styled with grouping selector.</p>
+
+  <div>
+    <p>6. Descendant Selector (p inside div is purple)</p>
+    <span>7. Child Selector (span inside div is red)</span>
+  </div>
+
+  <h2>8. Adjacent Sibling Selector</h2>
+  <p>This p comes right after h2 (lightblue background)</p>
+
+  <h3>9. General Sibling Selector</h3>
+  <p>All p after h3 get dashed border.</p>
+  <p>Another sibling p with dashed border.</p>
+
+  <a href="https://example.com" target="_blank">10. Attribute Selector (Orange link without underline)</a>
+
+  <ul>
+    <li>11. Pseudo-class (First child bold)</li>
+    <li>Second child (Dark green)</li>
+    <li>Third child (Normal)</li>
+  </ul>
+
+  <p>
+    <a href="#">Hover me!</a> (turns red on hover)
+  </p>
+</body>
+</html>

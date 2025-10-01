@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Projects</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .project-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    .project-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .project-card h3 {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+    .project-card p {
+      font-size: 14px;
+      color: #555;
+    }
+    .project-card a {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      padding: 8px 12px;
+      background: #333;
+      color: #fff;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    .project-card a:hover {
+      background: #007BFF;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      padding: 10px 15px;
+      background: #333;
+      color: #fff;
+      border-radius: 5px;
+    }
+    .back-link:hover {
+      background: #007BFF;
+    }
+  </style>
+</head>
+<body>
+  <h2>My Projects</h2>
+  
+  <div class="projects-container">
+    <div class="project-card">
+      <img src="netflix.jpg" alt="Netflix Clone">
+      <h3>Netflix Clone</h3>
+      <p>A frontend clone of Netflix built with HTML, CSS, and JavaScript.</p>
+      <a href="#">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <img src="dating.jpg" alt="Dating App Layout">
+      <h3>Dating App Layout</h3>
+      <p>A creative dating app interface with modern UI design.</p>
+      <a href="#">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <img src="calc.jpg" alt="Calculator">
+      <h3>Calculator</h3>
+      <p>A simple calculator built using JavaScript for fast calculations.</p>
+      <a href="#">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <img src="tetris.jpg" alt="Tetris Game">
+      <h3>Tetris Game</h3>
+      <p>A fun Tetris game built using JavaScript and HTML canvas.</p>
+      <a href="#">Play Game</a>
+    </div>
+
+    <div class="project-card">
+      <img src="portfolio.jpg" alt="Portfolio">
+      <h3>Personal Portfolio</h3>
+      <p>A clean portfolio website showcasing my projects and skills.</p>
+      <a href="#">Visit Site</a>
+    </div>
+
+    <div class="project-card">
+      <img src="database.jpg" alt="Database Project">
+      <h3>Student Database</h3>
+      <p>A MongoDB project with student collection storing name, age, course.</p>
+      <a href="#">View Details</a>
+    </div>
+  </div>
+
+  <a href="index.html" class="back-link">Back to Home</a>
+</body>
+</html>

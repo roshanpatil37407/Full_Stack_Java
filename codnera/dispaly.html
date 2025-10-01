@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Display Types</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h2 {
+      margin-top: 30px;
+      color: darkblue;
+    }
+    .box {
+      border: 2px solid black;
+      padding: 10px;
+      margin: 5px;
+      background: linear-gradient(to right, #8ab9e2, #064072);
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 8px;
+    }
+    .box:hover {
+      background: linear-gradient(to right, #b5dc8f, #b6c326);
+    }
+
+    /* Display examples */
+    .block .box {
+      display: block;
+      width: 120px;
+    }
+    .inline .box {
+      display: inline;
+    }
+    .inline-block .box {
+      display: inline-block;
+      width: 120px;
+    }
+    .flex {
+      display: flex;
+      gap: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .none .box {
+      display: none; /* This hides it */
+    }
+    .contents {
+      display: contents; /* Parent disappears, children act like direct elements */
+    }
+    .table {
+      display: table;
+      border-collapse: collapse;
+    }
+    .table .box {
+      display: table-cell;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Display Types Example</h1>
+
+  <h2>1. Block</h2>
+  <div class="block">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+  </div>
+
+  <h2>2. Inline</h2>
+  <div class="inline">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+  </div>
+
+  <h2>3. Inline-block</h2>
+  <div class="inline-block">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+  </div>
+
+  <h2>4. Flex</h2>
+  <div class="flex">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+  </div>
+
+  <h2>5. Grid</h2>
+  <div class="grid">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+  </div>
+
+  <h2>6. None (Hidden)</h2>
+  <div class="none">
+    <div class="box">Box 1 (Hidden)</div>
+    <div class="box">Box 2 (Hidden)</div>
+  </div>
+  <p>(Boxes are hidden because of <code>display: none;</code>)</p>
+
+  <h2>7. Contents</h2>
+  <div class="contents">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+  </div>
+  <p>(Parent disappears, children act like normal siblings)</p>
+
+  <h2>8. Table / Table-cell</h2>
+  <div class="table">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+  </div>
+
+</body>
+</html>

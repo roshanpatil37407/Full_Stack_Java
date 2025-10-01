@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Functions Example</title>
+  <style>
+    :root {
+      --primary-color: #4caf50;
+      --secondary-color: #ff5722;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    /* calc() example */
+    .calc-box {
+      width: calc(100% - 150px);
+      background: var(--secondary-color);
+      color: white;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    /* clamp() example */
+    .clamp-text {
+      font-size: clamp(14px, 3vw, 30px);
+      background: lightblue;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+
+    /* var() example */
+    .var-box {
+      background: var(--primary-color);
+      padding: calc(10px + 1em); /* mix calc with var */
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 CSS Functions Demo</h1>
+
+  <div class="calc-box">Box with width = 100% - 150px (calc)</div>
+
+  <p class="clamp-text">Responsive text → min 14px, flexible 3vw, max 30px (clamp)</p>
+
+  <div class="var-box">Box styled with CSS variables (var)</div>
+</body>
+</html>

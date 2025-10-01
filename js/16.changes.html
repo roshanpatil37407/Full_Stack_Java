@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change Text, HTML & CSS with JS</title>
+    <style>
+      #myDiv {
+        padding: 15px;
+        background-color: lightgray;
+        border: 2px solid #ccc;
+        margin-bottom: 15px;
+        font-size: 18px;
+        transition: all 0.3s ease;
+      }
+      button {
+        padding: 10px 15px;
+        margin: 5px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: teal;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Change Text, HTML, and CSS Example</h1>
+
+    <div id="myDiv">This is the original div content.</div>
+
+    <button id="changeTextBtn">Change Text</button>
+    <button id="changeHTMLBtn">Change HTML</button>
+    <button id="changeCSSBtn">Change CSS</button>
+
+    <script>
+      const myDiv = document.getElementById("myDiv");
+
+      // 1️⃣ Change Text using innerText
+      const changeTextBtn = document.getElementById("changeTextBtn");
+      changeTextBtn.addEventListener("click", () => {
+        myDiv.innerText = "Text has been changed using innerText!";
+      });
+
+      // 2️⃣ Change HTML using innerHTML
+      const changeHTMLBtn = document.getElementById("changeHTMLBtn");
+      changeHTMLBtn.addEventListener("click", () => {
+        myDiv.innerHTML =
+          "<b>HTML has been changed using innerHTML!</b> <i>Enjoy formatting!</i>";
+      });
+
+      // 3️⃣ Change CSS using style property
+      const changeCSSBtn = document.getElementById("changeCSSBtn");
+      changeCSSBtn.addEventListener("click", () => {
+        myDiv.style.backgroundColor = "lightblue";
+        myDiv.style.color = "darkred";
+        myDiv.style.fontSize = "24px";
+        myDiv.style.padding = "25px";
+        myDiv.style.border = "3px dashed purple";
+      });
+    </script>
+  </body>
+</html>

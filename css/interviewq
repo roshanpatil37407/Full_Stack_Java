@@ -1,0 +1,145 @@
+1. What is CSS and why is it used?
+
+Answer:
+CSS (Cascading Style Sheets) is used to style HTML elements (colors, fonts, layouts, spacing). It separates content (HTML) from presentation (design).
+
+2. Difference between inline, internal, and external CSS
+   Type Example Pros/Cons
+   Inline <p style="color:red;">Text</p> Quick, overrides other CSS, not reusable
+   Internal <style>p{color:red;}</style> Page-specific, no extra file
+   External style.css Reusable, better for large projects, cached
+3. What are the different types of CSS selectors?
+
+Answer:
+
+Element selector: div
+
+Class selector: .className
+
+ID selector: #idName
+
+Attribute selector: [type="text"]
+
+Pseudo-class: :hover, :focus
+
+Pseudo-element: ::before, ::after
+
+4. Difference between relative, absolute, fixed, sticky positioning
+   Type Behavior
+   Relative Moves relative to itself
+   Absolute Moves relative to nearest positioned ancestor
+   Fixed Stays fixed on viewport, even on scroll
+   Sticky Acts like relative until scroll reaches a threshold, then fixed
+5. What is the difference between relative, static, and absolute in CSS positioning?
+
+Static: Default, no positioning
+
+Relative: Moves relative to original position
+
+Absolute: Moves relative to parent with non-static position
+
+6. What is the difference between inline, block, and inline-block elements?
+
+Inline: Does not start a new line, width/height ignored (span)
+
+Block: Starts on a new line, full width (div)
+
+Inline-block: Behaves like inline but accepts width/height
+
+7. What is the difference between id and class selectors?
+
+ID (#id): Unique, used once, higher specificity
+
+Class (.class): Reusable on multiple elements
+
+8. Explain z-index in CSS
+
+Controls stacking order of elements
+
+Only works on positioned elements (relative, absolute, fixed, sticky)
+
+Higher value = front
+
+9. What are pseudo-classes and pseudo-elements?
+
+Pseudo-class: Represents a state (:hover, :focus, :nth-child())
+
+Pseudo-element: Represents part of an element (::before, ::after, ::first-letter)
+
+10. What is the difference between em, rem, %, px, and vh/vw units?
+    Unit Meaning
+    px Pixels, fixed
+    em Relative to parent font-size
+    rem Relative to root font-size
+    % Relative to parent element
+    vh/vw 1% of viewport height/width
+11. Difference between absolute, relative, and fixed backgrounds
+
+background-attachment: scroll (default, moves with content)
+
+fixed (stays in viewport)
+
+local (scrolls with element content)
+
+12. Difference between inline style, !important, and specificity
+
+Inline styles > ID > Class > Element
+
+!important overrides all, use sparingly
+
+13. What is the difference between inline, inline-block, and block for layout?
+
+Inline ignores width/height, stays on line
+
+Inline-block respects width/height, stays on line
+
+Block starts a new line, takes full width
+
+14. Explain the difference between relative, absolute, fixed, and sticky
+
+Already covered in Q4
+
+15. What are CSS transitions and animations?
+
+Transition: Smoothly changes a property on an event
+
+button { transition: background 0.3s; }
+button:hover { background: red; }
+
+Animation: Keyframe-based movement
+
+@keyframes move { from {left:0} to {left:100px} }
+div { animation: move 2s infinite; }
+
+16. Difference between position: sticky and fixed
+
+Sticky: scrolls until a threshold, then sticks
+
+Fixed: always sticks to viewport
+
+17. Difference between relative, absolute, and sticky
+
+Relative: moves from normal position
+
+Absolute: moves relative to nearest positioned ancestor
+
+Sticky: combination of relative + fixed
+
+18. What is the difference between inline styles and CSS classes?
+
+Inline: Specific to one element, overrides CSS
+
+Class: Reusable, better for maintainability
+
+19. Difference between CSS Grid and Flexbox
+    Feature Flexbox Grid
+    Direction 1D (row/column) 2D (rows + columns)
+    Best for Alignment & distribution Complex layouts
+    Example Horizontal menu Page layout
+20. What are media queries and how do you use them?
+
+Allows responsive design by applying styles based on screen size:
+
+@media (max-width: 768px) {
+body { background: lightblue; }
+}

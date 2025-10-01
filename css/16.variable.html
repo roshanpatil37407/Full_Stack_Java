@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Variables Example</title>
+  <style>
+    /* 🎨 Declare global variables inside :root */
+    :root {
+      --main-color: steelblue;
+      --secondary-color: tomato;
+      --text-color: #333;
+      --padding: 15px;
+      --radius: 8px;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      color: var(--text-color);
+    }
+
+    .card {
+      background: var(--main-color);
+      color: white;
+      padding: var(--padding);
+      border-radius: var(--radius);
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      background: var(--secondary-color);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: var(--secondary-color);
+      border-radius: var(--radius);
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--main-color);
+    }
+
+    /* Example of local (scoped) variable */
+    .box {
+      --local-bg: #ffeb3b;
+      background: var(--local-bg);
+      padding: var(--padding);
+      border-radius: var(--radius);
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 CSS Variables Example</h1>
+
+  <div class="card">
+    <h2>Card Component</h2>
+    <p>This card uses <b>--main-color</b> as background.</p>
+  </div>
+
+  <a href="#" class="btn">Click Me</a>
+
+  <div class="box">
+    <p>This box uses a <b>local variable (--local-bg)</b>.</p>
+  </div>
+
+  <p><b>Key points:</b><br>
+    • Define variables in <code>:root</code> for global scope.<br>
+    • Use them with <code>var(--variable-name)</code>.<br>
+    • Can be overridden locally inside elements.<br>
+    • Super useful for themes, reusable values, and consistency.<br>
+  </p>
+</body>
+</html>

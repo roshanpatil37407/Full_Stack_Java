@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe and Embed Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h2 {
+            color: #2a7ae2;
+        }
+        iframe, embed {
+            border: 2px solid #ccc;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Examples of Iframe and Embed Tags</h1>
+
+    <!-- IFRAME Example -->
+    <h2>1. Iframe Example (Embedding YouTube Video)</h2>
+    <p>The iframe tag is used to embed another HTML page or video inside this page.</p>
+    <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
+
+    <!-- EMBED Example -->
+    <h2>2. Embed Example (Displaying a PDF)</h2>
+    <p>The embed tag is used to embed external media files like PDF, audio, or video.</p>
+    <embed 
+        src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" 
+        type="application/pdf" 
+        width="600" 
+        height="400">
+    
+    <!-- Note on Security -->
+    <h2>Security Tips</h2>
+    <ul>
+        <li>Always use <code>HTTPS</code> links to avoid mixed content issues.</li>
+        <li>Use <code>sandbox</code> attribute for iframes to prevent malicious actions.</li>
+        <li>Be cautious about the content you embed to avoid XSS or clickjacking risks.</li>
+    </ul>
+
+</body>
+</html>

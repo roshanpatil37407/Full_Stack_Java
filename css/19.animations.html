@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Animations Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    /* 🔹 Example 1: Bouncing Ball */
+    .ball {
+      width: 80px;
+      height: 80px;
+      background: tomato;
+      border-radius: 50%;
+      margin: 40px auto;
+      position: relative;
+
+      animation: bounce 2s infinite ease-in-out;
+    }
+
+    @keyframes bounce {
+      0%   { top: 0; }
+      50%  { top: 150px; }
+      100% { top: 0; }
+    }
+
+    /* 🔹 Example 2: Color Changing Box */
+    .box {
+      width: 120px;
+      height: 120px;
+      margin: 40px auto;
+      background: steelblue;
+
+      animation: colorChange 4s infinite alternate;
+    }
+
+    @keyframes colorChange {
+      0%   { background: steelblue; }
+      25%  { background: green; }
+      50%  { background: orange; }
+      75%  { background: purple; }
+      100% { background: crimson; }
+    }
+
+    /* 🔹 Example 3: Text Fade In-Out */
+    .fade-text {
+      font-size: 22px;
+      margin-top: 50px;
+      opacity: 0;
+
+      animation: fadeInOut 3s infinite;
+    }
+
+    @keyframes fadeInOut {
+      0%   { opacity: 0; }
+      50%  { opacity: 1; }
+      100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎬 CSS Animation Examples</h1>
+
+  <div class="ball"></div>
+  <div class="box"></div>
+  <p class="fade-text">Hello, I'm Animated ✨</p>
+
+  <p><b>Explanation:</b></p>
+  <ul>
+    <li><code>@keyframes</code> defines animation steps (0% → 100%).</li>
+    <li><code>animation: name duration timing-function iteration;</code></li>
+    <li><b>Properties:</b> infinite, alternate, ease-in, ease-out, linear.</li>
+  </ul>
+</body>
+</html>

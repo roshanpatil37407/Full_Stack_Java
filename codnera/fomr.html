@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend><b>Fill Your Details</b></legend>
+
+            <label for="fname">First Name</label><br>
+            <input type="text" id="fname" name="fname" placeholder="Enter first name"><br><br>
+
+            <label for="lname">Last Name</label><br>
+            <input type="text" id="lname" name="lname" placeholder="Enter last name"><br><br>
+
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email" placeholder="Enter email"><br><br>
+
+            <label for="password">Password</label><br>
+            <input type="password" id="password" name="password" placeholder="Enter password"><br><br>
+
+            <label>Gender</label><br>
+            <input type="radio" id="male" name="gender" value="Male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label><br><br>
+
+            <label for="dob">Date of Birth</label><br>
+            <input type="date" id="dob" name="dob"><br><br>
+
+            <label for="phone">Phone Number</label><br>
+            <input type="tel" id="phone" name="phone" placeholder="Enter phone number" pattern="[0-9]{10}" required><br><br>
+
+            <label for="address">Address</label><br>
+            <textarea id="address" name="address" rows="4" cols="30" placeholder="Enter address"></textarea><br><br>
+
+            <label for="country">Country</label><br>
+            <select id="country" name="country">
+                 <option value="s">--Select--</option>
+                <option value="usa">USA</option>
+                <option value="canada">Canada</option>
+                <option value="uk">UK</option>
+                <option value="australia">Australia</option>
+                <option value="india">India</option>
+            </select><br><br>
+
+            <input type="checkbox" id="terms" name="terms">I agree to the terms and conditions<br><br>
+
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML List Examples</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h2 {
+      color: darkblue;
+    }
+    ul.square { list-style-type: square; }
+    ul.circle { list-style-type: circle; }
+    ul.none { list-style-type: none; }
+  </style>
+</head>
+<body>
+
+  <h1>All Types of HTML Lists</h1>
+
+  <!-- Ordered List -->
+  <h2>1. Ordered List (ol)</h2>
+  <p>Default numbered list:</p>
+  <ol>
+    <li>Boil water</li>
+    <li>Add tea leaves</li>
+    <li>Add sugar and milk</li>
+    <li>Serve hot</li>
+  </ol>
+
+  <p>Different numbering styles:</p>
+  <ol type="A">
+    <li>Step One</li>
+    <li>Step Two</li>
+    <li>Step Three</li>
+  </ol>
+
+  <ol type="a">
+    <li>Option one</li>
+    <li>Option two</li>
+  </ol>
+
+  <ol type="I">
+    <li>Chapter One</li>
+    <li>Chapter Two</li>
+  </ol>
+
+  <ol type="i">
+    <li>Part one</li>
+    <li>Part two</li>
+  </ol>
+
+  <hr>
+
+  <!-- Unordered List -->
+  <h2>2. Unordered List (ul)</h2>
+  <p>Default bullet list:</p>
+  <ul>
+    <li>Milk</li>
+    <li>Bread</li>
+    <li>Butter</li>
+    <li>Eggs</li>
+  </ul>
+
+  <p>Different bullet styles:</p>
+  <ul class="square">
+    <li>Square bullet</li>
+    <li>Example item</li>
+  </ul>
+
+  <ul class="circle">
+    <li>Circle bullet</li>
+    <li>Example item</li>
+  </ul>
+
+  <ul class="none">
+    <li>No bullet</li>
+    <li>Example item</li>
+  </ul>
+
+  <hr>
+
+  <!-- Definition List -->
+  <h2>3. Definition List (dl)</h2>
+  <dl>
+    <dt><b>HTML</b></dt>
+    <dd>HyperText Markup Language</dd>
+
+    <dt><b>CSS</b></dt>
+    <dd>Cascading Style Sheets</dd>
+
+    <dt><b>JavaScript</b></dt>
+    <dd>Programming language for web interactivity</dd>
+  </dl>
+
+  <hr>
+
+  <!-- Nested List -->
+  <h2>4. Nested Lists</h2>
+  <p>Lists inside other lists:</p>
+  <ol>
+    <li>Morning
+      <ul>
+        <li>Wake up</li>
+        <li>Brush teeth</li>
+        <li>Exercise</li>
+      </ul>
+    </li>
+    <li>Work
+      <ul>
+        <li>Meetings</li>
+        <li>Projects</li>
+      </ul>
+    </li>
+    <li>Evening
+      <ol type="i">
+        <li>Dinner</li>
+        <li>Relax</li>
+        <li>Sleep</li>
+      </ol>
+    </li>
+  </ol>
+
+</body>
+</html>

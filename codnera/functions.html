@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function add(a, b) {
+        return a + b;
+      }
+
+      document.writeln(add(5, 3));
+
+      function isEven(num) {
+        return num % 2 === 0;
+      }
+
+      document.writeln("<br> even num :" +isEven(10));
+      document.writeln("<br>" +isEven(7));
+
+      function factorial(n) {
+        if (n === 0 || n === 1) {
+          return 1;
+        }
+        return n * factorial(n - 1);
+      }
+      document.writeln("<br> factorial :" +factorial(5));
+
+      function maxOfThree(a, b, c) {
+        return Math.max(a, b, c);
+      }
+
+      document.writeln("<br> max num :" +maxOfThree(10, 25, 15));
+
+      function reverseString(str) {
+        return str.split("").reverse().join("");
+      }
+
+      document.writeln("<br> reverse : " +reverseString("Roshan"));
+
+      function calculateSI(p, r, t) {
+        return (p * r * t) / 100;
+      }
+
+      document.writeln("<br>  calculations : " + calculateSI(1000, 5, 2));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Typography Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    /* ------------ Font Family ------------ */
+    .family {
+      font-family: "Georgia", serif;
+    }
+
+    /* ------------ Font Size ------------ */
+    .px { font-size: 20px; }        /* Fixed */
+    .em { font-size: 1.5em; }       /* Relative to parent */
+    .rem { font-size: 1.5rem; }     /* Relative to root (html) */
+    .percent { font-size: 120%; }   /* Relative to default */
+
+    /* ------------ Font Weight ------------ */
+    .normal { font-weight: normal; }
+    .bold { font-weight: bold; }
+    .lighter { font-weight: lighter; }
+    .bolder { font-weight: bolder; }
+    .thin { font-weight: 300; }
+    .extra-bold { font-weight: 700; }
+
+    /* ------------ Extra Typography ------------ */
+    .style {
+      font-style: italic;
+    }
+
+    .line-height {
+      line-height: 2;
+      background: #f0f0f0;
+    }
+
+    .transform {
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 CSS Typography Examples</h1>
+
+  <!-- Font Family -->
+  <p class="family">1. Font Family → This text uses "Georgia".</p>
+
+  <!-- Font Size -->
+  <h2>2. Font Size Units</h2>
+  <p class="px">Font size using <b>px (20px)</b></p>
+  <p class="em">Font size using <b>em (1.5em)</b></p>
+  <p class="rem">Font size using <b>rem (1.5rem)</b></p>
+  <p class="percent">Font size using <b>% (120%)</b></p>
+
+  <!-- Font Weight -->
+  <h2>3. Font Weight Types</h2>
+  <p class="normal">Normal weight (400)</p>
+  <p class="bold">Bold (keyword "bold" or 700)</p>
+  <p class="lighter">Lighter than parent</p>
+  <p class="bolder">Bolder than parent</p>
+  <p class="thin">Thin (300)</p>
+  <p class="extra-bold">Extra Bold (700)</p>
+
+  <!-- Extra Typography -->
+  <h2>4. Other Typography</h2>
+  <p class="style">Font Style → Italic text.</p>
+  <p class="line-height">Line Height → Spaced lines for readability.<br>Each line is further apart.</p>
+  <p class="transform">Text Transform → THIS TEXT IS UPPERCASE.</p>
+</body>
+</html>

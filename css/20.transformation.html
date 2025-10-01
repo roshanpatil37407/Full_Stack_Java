@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Transformations Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background: steelblue;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px auto;
+      transition: transform 0.5s ease; /* smooth effect */
+    }
+
+    /* 🔹 Rotate Example */
+    .rotate:hover {
+      transform: rotate(45deg);
+    }
+
+    /* 🔹 Scale Example */
+    .scale:hover {
+      transform: scale(1.5);
+    }
+
+    /* 🔹 Translate Example */
+    .translate:hover {
+      transform: translate(50px, 20px);
+    }
+
+    /* 🔹 Skew Example */
+    .skew:hover {
+      transform: skew(20deg, 10deg);
+    }
+
+    /* 🔹 Combine Multiple Transforms */
+    .combo:hover {
+      transform: rotate(30deg) scale(1.2) translate(30px, 10px);
+    }
+  </style>
+</head>
+<body>
+  <h1>✨ CSS Transformations Examples</h1>
+
+  <div class="box rotate">Rotate</div>
+  <div class="box scale">Scale</div>
+  <div class="box translate">Translate</div>
+  <div class="box skew">Skew</div>
+  <div class="box combo">Combo</div>
+
+  <p><b>Instructions:</b> Hover over each box to see the transformation.</p>
+</body>
+</html>

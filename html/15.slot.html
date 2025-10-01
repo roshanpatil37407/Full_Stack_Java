@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Slot Example</title>
+</head>
+<body>
+ 
+  <my-card>
+    <span slot="title">Hello Students</span>
+    <span slot="content">This is a custom card using slots.</span>
+  </my-card>
+
+  <script>
+
+    const template = document.createElement('template');
+    template.innerHTML = `
+      <style>
+        .card { border: 1px solid black; padding: 10px; border-radius: 8px; }
+        .title { font-weight: bold; }
+      </style>
+      <div class="card">
+        <div class="title"><slot name="title"></slot></div>
+        <div class="content"><slot name="content"></slot></div>
+      </div>
+    `;
+    class MyCard extends HTMLElement {
+      constructor() {
+        super();
+        const shadow = this.attachShadow({ mode: 'open' });
+        shadow.appendChild(template.content.cloneNode(true));
+      }
+    }
+    customElements.define('my-card', MyCard);
+  </script>
+</body>
+</html>

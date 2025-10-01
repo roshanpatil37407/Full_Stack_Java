@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BOM Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    button {
+      margin: 5px;
+      padding: 8px 15px;
+      cursor: pointer;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌐 Browser Object Model (BOM) Demo</h1>
+
+  <h2>1. Window</h2>
+  <button onclick="showWindow()">Show Window Size</button>
+  <pre id="winOutput"></pre>
+
+  <h2>2. Navigator</h2>
+  <button onclick="showNavigator()">Show Browser Info</button>
+  <pre id="navOutput"></pre>
+
+  <h2>3. Location</h2>
+  <button onclick="showLocation()">Show Location</button>
+  <button onclick="reloadPage()">Reload Page</button>
+  <pre id="locOutput"></pre>
+
+  <h2>4. History</h2>
+  <button onclick="goBack()">Go Back</button>
+  <button onclick="goForward()">Go Forward</button>
+
+  <h2>5. Screen</h2>
+  <button onclick="showScreen()">Show Screen Info</button>
+  <pre id="screenOutput"></pre>
+
+  <script>
+    // 1. Window
+    function showWindow() {
+      document.getElementById("winOutput").innerText =
+        "Width: " + window.innerWidth + "\nHeight: " + window.innerHeight;
+    }
+
+    // 2. Navigator
+    function showNavigator() {
+      document.getElementById("navOutput").innerText =
+        "User Agent: " + navigator.userAgent + "\n" +
+        "Language: " + navigator.language + "\n" +
+        "Online: " + navigator.onLine;
+    }
+
+    // 3. Location
+    function showLocation() {
+      document.getElementById("locOutput").innerText =
+        "Full URL: " + location.href + "\n" +
+        "Hostname: " + location.hostname + "\n" +
+        "Pathname: " + location.pathname + "\n" +
+        "Protocol: " + location.protocol;
+    }
+    function reloadPage() {
+      location.reload();
+    }
+
+    // 4. History
+    function goBack() {
+      history.back();
+    }
+    function goForward() {
+      history.forward();
+    }
+
+    // 5. Screen
+    function showScreen() {
+      document.getElementById("screenOutput").innerText =
+        "Width: " + screen.width + "\n" +
+        "Height: " + screen.height + "\n" +
+        "Color Depth: " + screen.colorDepth;
+    }
+
+
+
+//     navigator.geolocation.getCurrentPosition(pos => {
+//   console.log(pos.coords.latitude, pos.coords.longitude);
+// });
+
+
+let canvas = document.getElementById("myCanvas");
+let ctx = canvas.getContext("2d");
+ctx.fillStyle = "blue";
+ctx.fillRect(10, 10, 100, 50);
+
+
+
+Notification.requestPermission().then(permission => {
+  if (permission === "granted") {
+    new Notification("Hello!", { body: "This is a notification." });
+  }
+});
+
+
+
+
+
+
+  </script>
+</body>
+</html>

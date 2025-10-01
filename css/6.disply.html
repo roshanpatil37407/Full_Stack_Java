@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display Types Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-top: 30px;
+      color: #333;
+    }
+
+    .box {
+      background: #cfe2ff;
+      border: 2px solid #0d6efd;
+      padding: 10px;
+      margin: 5px;
+      text-align: center;
+    }
+
+    /* Block example */
+    .block {
+      display: block;
+      width: 200px;
+      background: #ffe5e5;
+    }
+
+    /* Inline example */
+    .inline {
+      display: inline;
+      background: #d1e7dd;
+      width: 200px; /* ignored */
+      height: 50px; /* ignored */
+    }
+
+    /* Inline-block example */
+    .inline-block {
+      display: inline-block;
+      width: 150px;
+      height: 60px;
+      background: #fff3cd;
+    }
+  </style>
+</head>
+<body>
+  <h1>📐 CSS Display Types</h1>
+
+  <h2>1. Block Example</h2>
+  <div class="box block">Block Element 1</div>
+  <div class="box block">Block Element 2</div>
+  <p>➡️ Notice: Each one takes full width and starts on a new line.</p>
+
+  <h2>2. Inline Example</h2>
+  <span class="box inline">Inline 1</span>
+  <span class="box inline">Inline 2</span>
+  <span class="box inline">Inline 3</span>
+  <p>➡️ Notice: Inline elements stay in the same line, ignore width/height.</p>
+
+  <h2>3. Inline-Block Example</h2>
+  <div class="box inline-block">Inline-Block 1</div>
+  <div class="box inline-block">Inline-Block 2</div>
+  <div class="box inline-block">Inline-Block 3</div>
+  <p>➡️ Notice: Inline-block stays in one line but respects width & height.</p>
+</body>
+</html>

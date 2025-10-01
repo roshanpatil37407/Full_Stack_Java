@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body onload="welcomeMessage()">
+
+<button onclick="sayHello()">Click Me</button>
+<h2 onmouseover="cl(this)">Hover over me</h2>
+<input type="text" onkeypress="sh(event)" placeholder="Type something">
+
+<script>
+function sayHello() {
+  alert("Hello! You clicked the button.");
+}
+
+function cl(element) {
+  element.style.backgroundColor = "yellow"; 
+}
+
+function sh(kp) {
+  alert("You pressed a key: " + kp.key);
+}
+
+function welcomeMessage() {
+  alert("Welcome! Page has loaded successfully.");
+}
+</script>
+
+</body>
+</html>

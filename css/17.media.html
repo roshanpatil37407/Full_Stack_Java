@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Media Queries Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: all 0.3s ease-in-out;
+    }
+
+    header {
+      background: steelblue;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+
+    .box {
+      flex: 1 1 300px;
+      margin: 10px;
+      padding: 20px;
+      background: lightgray;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    /* 📱 Tablet (max-width: 768px) */
+    @media (max-width: 768px) {
+      header {
+        background: tomato;
+      }
+      .box {
+        background: #ffd580;
+      }
+    }
+
+    /* 📱 Mobile (max-width: 480px) */
+    @media (max-width: 480px) {
+      header {
+        background: purple;
+        font-size: 18px;
+      }
+      .container {
+        flex-direction: column;
+      }
+      .box {
+        background: lightgreen;
+      }
+    }
+
+    /* 📐 Orientation: Landscape */
+    @media (orientation: landscape) {
+      body {
+        background: #f0f8ff; /* AliceBlue */
+      }
+      header {
+        border-bottom: 5px solid navy;
+      }
+    }
+
+    /* 📐 Orientation: Portrait */
+    @media (orientation: portrait) {
+      body {
+        background: #fffaf0; /* FloralWhite */
+      }
+      header {
+        border-left: 5px solid brown;
+      }
+    }
+
+    /* 🌙 Dark Mode */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #121212;
+        color: #eee;
+      }
+      header {
+        background: #222;
+        color: #0ff;
+      }
+      .box {
+        background: #333;
+        color: white;
+      }
+    }
+
+    /* ☀️ Light Mode */
+    @media (prefers-color-scheme: light) {
+      body {
+        background: white;
+        color: black;
+      }
+      header {
+        background: #87ceeb;
+        color: black;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📱 Advanced Media Queries</h1>
+    <p>Resize, rotate, or switch dark/light mode to see effects.</p>
+  </header>
+
+  <div class="container">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+  </div>
+
+  <p><b>What’s included:</b><br>
+    • Screen size breakpoints (desktop, tablet, mobile)<br>
+    • Orientation (portrait vs landscape)<br>
+    • Dark mode 🌙 & Light mode ☀️ support<br>
+  </p>
+</body>
+</html>

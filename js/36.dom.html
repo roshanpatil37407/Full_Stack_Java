@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Playground</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    #title {
+      color: blue;
+      margin-bottom: 15px;
+    }
+    #output {
+      margin-top: 15px;
+      padding: 10px;
+      border: 1px solid #333;
+      display: inline-block;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+      background: #007bff;
+      color: white;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="title">Hello DOM 👋</h1>
+  <p id="para">This is a paragraph.</p>
+  <div id="output">Output area</div>
+  <br><br>
+
+  <button onclick="changeText()">Change Text</button>
+  <button onclick="changeStyle()">Change Style</button>
+  <button onclick="addElement()">Add Element</button>
+  <button onclick="removeElement()">Remove Paragraph</button>
+
+  <script>
+    function changeText() {
+      document.getElementById("title").innerText = "DOM Updated 🎉";
+    }
+
+    function changeStyle() {
+      let para = document.getElementById("para");
+      para.style.color = "red";
+      para.style.fontSize = "20px";
+      para.style.fontWeight = "bold";
+    }
+
+    function addElement() {
+      let newDiv = document.createElement("div");
+      newDiv.innerText = "I am a new dynamically added element!";
+      newDiv.style.color = "green";
+      document.getElementById("output").appendChild(newDiv);
+    }
+
+    function removeElement() {
+      let para = document.getElementById("para");
+      if (para) {
+        para.remove();
+      } else {
+        alert("Paragraph already removed!");
+      }
+    }
+  </script>
+
+</body>
+</html>

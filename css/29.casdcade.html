@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Cascade Layers Example</title>
+  <style>
+    /* Declare layers in priority order */
+    @layer reset, base, theme, utilities;
+
+    /* Reset Layer */
+    @layer reset {
+      h1 {
+        margin: 0;
+        font-size: 1em;
+        color: black;
+      }
+    }
+
+    /* Base Layer */
+    @layer base {
+      h1 {
+        font-size: 2em;
+        color: navy;
+      }
+    }
+
+    /* Theme Layer */
+    @layer theme {
+      h1 {
+        color: darkgreen;
+      }
+    }
+
+    /* Utilities Layer */
+    @layer utilities {
+      .text-red {
+        color: red !important; /* still overrides */
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Hello, Cascade Layers!</h1>
+  <h1 class="text-red">I am Utility Layer</h1>
+</body>
+</html>

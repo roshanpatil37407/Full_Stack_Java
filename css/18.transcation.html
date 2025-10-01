@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Transitions Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    /* 🔹 Button with transition */
+    .btn {
+      background: steelblue;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 18px;
+
+      /* Transition applied to all properties */
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: tomato;
+      transform: scale(1.1);
+    }
+
+    /* 🔹 Box transition */
+    .box {
+      width: 150px;
+      height: 150px;
+      background: lightgreen;
+      margin: 30px auto;
+      border-radius: 12px;
+
+      /* Transition only for background & transform */
+      transition: background-color 0.4s ease-in, transform 0.4s ease-out;
+    }
+
+    .box:hover {
+      background: orange;
+      transform: rotate(15deg) scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 CSS Transition Demo</h1>
+
+  <button class="btn">Hover Me</button>
+
+  <div class="box"></div>
+
+  <p><b>Explanation:</b></p>
+  <ul>
+    <li><code>transition: all 0.3s ease;</code> → animates all properties smoothly.</li>
+    <li><code>transition: property duration timing-function;</code></li>
+    <li><b>Timing functions:</b> ease, linear, ease-in, ease-out, ease-in-out.</li>
+  </ul>
+</body>
+</html>

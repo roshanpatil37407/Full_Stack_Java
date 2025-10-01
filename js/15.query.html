@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Query Selectors Demo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .myClass {
+        color: blue;
+        margin: 5px 0;
+      }
+      p {
+        font-size: 16px;
+      }
+      #specialDiv {
+        padding: 10px;
+        background-color: lightyellow;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DOM Query Selectors Examples</h1>
+
+    <!-- Elements to select -->
+    <div id="specialDiv">This is a div with ID "specialDiv"</div>
+    <p class="myClass">Paragraph with class "myClass" #1</p>
+    <p class="myClass">Paragraph with class "myClass" #2</p>
+    <p>Paragraph with no class</p>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+    </ul>
+
+    <script>
+      // ===============================
+      // 1. getElementById
+      // ===============================
+      // Select a single element by its unique ID
+      const divById = document.getElementById("specialDiv");
+      console.log("getElementById:", divById);
+      divById.style.backgroundColor = "lightgreen"; // change background color
+      divById.innerText += " (selected using getElementById)";
+
+      // ===============================
+      // 2. getElementsByClassName
+      // ===============================
+      // Select all elements with a specific class (returns HTMLCollection)
+      const elemsByClass = document.getElementsByClassName("myClass");
+      console.log("getElementsByClassName:", elemsByClass);
+
+      // HTMLCollection is live, can use indexing
+      for (let i = 0; i < elemsByClass.length; i++) {
+        elemsByClass[i].style.fontWeight = "bold";
+        elemsByClass[
+          i
+        ].innerText += ` (selected using getElementsByClassName #${i + 1})`;
+      }
+
+      // ===============================
+      // 3. getElementsByTagName
+      // ===============================
+      // Select all elements of a certain tag (returns HTMLCollection)
+      const paragraphs = document.getElementsByTagName("p");
+      console.log("getElementsByTagName:", paragraphs);
+      for (let p of paragraphs) {
+        p.style.fontFamily = "Verdana";
+      }
+
+      // ===============================
+      // 4. querySelector
+      // ===============================
+      // Select the FIRST element that matches a CSS selector
+      const firstPara = document.querySelector("p.myClass");
+      console.log("querySelector:", firstPara);
+      firstPara.style.color = "red";
+
+      const divQuery = document.querySelector("#specialDiv");
+      divQuery.style.border = "2px solid red";
+
+      // ===============================
+      // 5. querySelectorAll
+      // ===============================
+      // Select ALL elements that match a CSS selector (returns NodeList)
+      const allParas = document.querySelectorAll("p");
+      console.log("querySelectorAll:", allParas);
+
+      allParas.forEach((p, index) => {
+        p.style.marginLeft = "20px";
+        p.innerText += ` (querySelectorAll #${index + 1})`;
+      });
+
+      // ===============================
+      // Explanation:
+      // ===============================
+      /*
+    1. getElementById("id") → selects single element by unique ID
+    2. getElementsByClassName("class") → selects all elements with the class (returns live HTMLCollection)
+    3. getElementsByTagName("tag") → selects all elements of the given tag (returns live HTMLCollection)
+    4. querySelector("CSS selector") → selects FIRST element matching the CSS selector
+    5. querySelectorAll("CSS selector") → selects ALL elements matching the CSS selector (returns static NodeList)
+  */
+    </script>
+  </body>
+</html>

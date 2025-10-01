@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Features Showcase</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serifzz;
+            margin: 0;
+            background:linear-gradient(to right, rgb(12, 60, 29), rgb(147, 203, 209), rgb(52, 29, 3));
+           
+             color: #333;
+        }
+        header {
+            text-align: center;
+            background: teal;
+            color: white;
+            padding: 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+        header p {
+            font-size: 1.2rem;
+        }
+
+        /* Flexbox */
+        .Flex-layout {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+           
+            text-align: center;
+            font-weight: bold;
+            /* cursor: pointer; */
+        }
+        .card:hover {
+            transform: scale(1.1);
+            background:linear-gradient(to right, rgb(130, 240, 241), rgb(147, 203, 209), rgb(61, 194, 197));
+        }
+
+        /* Grid Layout */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 30px;
+        }
+        .grid-item {
+            background: #ffecb3;
+            padding: 25px;
+            text-align: center;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .grid-item:hover {
+            background: #ffd54f;
+            transform: translateY(-5px);
+        }
+
+        /* Position Example */
+        .Position-box {
+            position: relative;
+            width: 60%;
+            margin: 50px auto;
+            background:linear-gradient(to right, rgb(130, 240, 241), rgb(147, 203, 209), rgb(61, 194, 197));
+            height: 150px;
+            padding: 50px auto;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(21, 1, 1, 0.3);
+            transition: transform 0.3s;
+        }
+        .Position-box:hover {
+            transform: rotate(2deg) scale(1.02);
+            background:linear-gradient(to right, rgb(12, 60, 29), rgb(147, 203, 209), rgb(52, 29, 3));
+        }
+
+        /* Section Titles */
+        h2 {
+            text-align: center;
+            color: #640433;
+            margin-top: 50px auto;
+        }
+        h2:hover {
+            color: #49cfe1;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Css Features Showcase</h1>
+        <p>Colors, Typography, Layouts, Animation & more</p>
+    </header>
+
+    <!-- Flexbox Layout -->
+    <section>
+        <h2>Flexbox Layout</h2>
+        <div class="Flex-layout">
+            <div class="card">Flex Card 1</div>
+            <div class="card">Flex Card 2</div>
+            <div class="card">Flex Card 3</div>
+        </div>
+    </section>
+
+    <!-- Grid Layout -->
+    <section>
+        <h2>Grid Layout</h2>
+        <div class="grid-layout">
+            <div class="grid-item">Grid Item 1</div>
+            <div class="grid-item">Grid Item 2</div>
+            <div class="grid-item">Grid Item 3</div>
+            <div class="grid-item">Grid Item 4</div>
+        </div>
+    </section>
+
+    <!-- Position Example -->
+    <h2>Position Example</h2>
+    <div class="Position-box">
+        <p style="text-align: center; margin-top: 60px; padding: 70px;">This is a relative box</p>
+    </div>
+</body>
+</html>

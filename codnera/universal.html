@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Example</title>
+    <style>
+        /* Universal Selector */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f0f8ff, #e6e6fa);
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* Type Selector */
+        p {
+            color: orange;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        /* Class Selector */
+        .highlighted {
+            background: yellow;
+            padding: 5px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* ID Selector */
+        #main-title {
+            color: purple;
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 32px;
+            text-shadow: 2px 2px 5px #aaa;
+        }
+
+        /* Group Selector */
+        h1, h2, h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 10px;
+        }
+
+        /* Descendant Selector */
+        div p {
+            color: green;
+            font-style: italic;
+            border-left: 4px solid green;
+            padding-left: 8px;
+            background: #f5fff5;
+        }
+
+        /* Child Selector */
+        ul > li {
+            color: purple;
+            font-weight: bold;
+            padding: 5px;
+            margin-left: 20px;
+        }
+
+        /* Sibling demo (h1 + p, h1 ~ p) */
+        h1 + p {
+            color: teal;
+            font-weight: bold;
+        }
+        h1 ~ p {
+            color: brown;
+        }
+
+        /* Attribute Selector */
+        a[href^="https"] {
+            color: green;
+            text-decoration: none;
+        }
+        a[target="_blank"] {
+            color: red;
+        }
+        a[href$=".pdf"] {
+            color: orange;
+        }
+        a[href*="google"] {
+            color: blue;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            margin-top: 10px;
+            padding: 8px;
+            width: 200px;
+            border: 2px solid purple;
+            border-radius: 6px;
+            outline: none;
+            transition: 0.3s;
+        }
+        input[type="text"]:focus {
+            border-color: teal;
+            background: #f0ffff;
+            box-shadow: 0px 0px 5px teal;
+        }
+    </style>
+</head>
+<body>
+    <!-- universal, type, ID, Class, Group -->
+     <h1 id="main-title">Welcome</h1>
+     <h2 class="highlighted">SubHeading</h2>
+     <p>This is a simple paragraph</p>
+     <p class="highlighted">This text is highlighted</p>
+
+     <!-- Descendent & child -->
+      <div>
+        <p>This is paragraph inside a div (green)</p>
+      </div>
+      <p>This is paragraph outside a div (orange)</p>
+      <ul>
+        <li>First Item (purple)</li>
+        <li>Second Item (purple)</li>
+        <li>Third Item (purple)</li>
+      </ul>
+
+      <!-- siblings selectors -->
+       <h1>Main Heading</h1>
+       <p>This paragraph comes right after h1 (teal)</p>
+       <p>Another sibling (brown)</p>
+       <p>This paragraph comes after h1 (brown)</p>
+       <p>Another sibling (brown)</p>
+
+       <!-- Attribute Selectors -->
+        <a href="https://example.com" target="_blank">External link (green, red when target)</a><br>
+        <a href="file.pdf">Download pdf (orange)</a><br>
+        <a href="https://google.com">Google link (blue)</a><br>
+        <input type="text" placeholder="Type here">
+</body>
+</html>
